@@ -1,18 +1,25 @@
 # Justin's Personal Site
+
 ---
+
 ## Planning
+
 Sitemap - (Octopus)[https://octopus.do/fu5eob8nv8]
 Design File - (Figma)[https://www.figma.com/file/cSgZQVvbEa7kq8qzPPdDNF/Portfolio-2022?node-id=0%3A1]
+
 ## Fonts
+
 Headers/Buttons/CTA's - Montserrat
-Body - Inter 
+Body - Inter
 
 ## Colors
-* Background + Copy - #F7FAFC | #1A202C
-* Accent - #68D391 | #9AE6B4
-* Dark Mode Toggle - #805AD5 | #ED8936
+
+- Background + Copy - #F7FAFC | #1A202C
+- Accent - #68D391 | #9AE6B4
+- Dark Mode Toggle - #805AD5 | #ED8936
 
 ## Tech used
+
 <details>
   <summary>Front End</summary>
   <ul>
@@ -46,5 +53,3 @@ Body - Inter
     <li><a href="https://www.postgresql.org/">ProstgresSQL</a></li>
   </ul>
 </details>
-
-
