@@ -15,34 +15,54 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ToggleLightMode from '../components/lightToggle'
+import { FaGithub } from 'react-icons/fa'
 
 const Nav = props => {
   const { path } = props
   return (
     <Box
       as="nav"
-      w="100%"
       bg={useColorModeValue('#f7fafc70', '#1a202c70')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
+      m='1rem'
+      maxW="container.xl"
       {...props}
-      m="5"
       borderRadius="sm"
+      width='100%'
+      position='fixed'
+      left='50%'
+      transform='translate(-50%,0)'
     >
       <Container
         display="flex"
-        p={2}
-        maxW="container.md"
+        maxW="container.xl"
         wrap="wrap"
-        align="center"
-        justify="space-between"
+        alignItems="center"
+        justifyContent="space-between"
+        p='1rem'
       >
-        <Flex align="center" mr={5}>
+        <Flex>
           <Heading as="h1" size="lg" fontWeight='200'>
-            Justin Garcia
+            <NextLink href='/' >Justin Garcia</NextLink>
           </Heading>
         </Flex>
+        <Stack
+        direction={{ base: 'column', md: 'row' }}
+        display={{ base: 'none', md: 'flex' }}
+        width={{ base: 'full', md: 'auto' }}
+        alignItems="center"
+        flexGrow={1}
+        mt={{ base: 4, md: 0 }}
+        >
+          <NextLink href='/about' path={path}>About</NextLink>
+          <NextLink href='/work' path={path}>My Work</NextLink>
+          <NextLink href='/posts' path={path}>Posts</NextLink>
+
+        </Stack>
+        <Flex>
         <ToggleLightMode/>
+        </Flex>
       </Container>
     </Box>
   )
