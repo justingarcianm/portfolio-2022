@@ -23,16 +23,6 @@ Body - Inter
 <details>
   <summary>Front End</summary>
   <ul>
-    <li>React</li>
-    <li>Next JS</li>
-    <li>Chakra-UI</li>
-    <li>Framer-Motion</li>
-    <li>Netlify</li>
-  </ul>
-</details>
-<details>
-  <summary>Front End</summary>
-  <ul>
     <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
     <li><a href="https://chakra-ui.com/guides/getting-started/nextjs-guide">Chakra-UI</a></li>
@@ -43,8 +33,8 @@ Body - Inter
 <details>
   <summary>Back End</summary>
   <ul>
-    <li><a href="https://strapi.io/">Strapi</a></li>
-    <li><a href="https://www.heroku.com/">Heroku</a></li>
+    <li><a href="https://strapi.io/">Strapi</a> MIght change over to sanity cms</li>
+    <li><a href="https://www.heroku.com/">Heroku may change depending on cms change</a></li>
   </ul>
 </details>
 <details>
