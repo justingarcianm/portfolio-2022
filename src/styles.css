@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --font-color:#1A202C;
+    --background-color:#F7FAFC;
+    --accent-color:#68D391;
+    --nav-bg:#f7fafc70;
+    --link-color:#81E6D9;
+    --toggle-bg:#6B46C1;
+    --always-light:#F7FAFC;
+}
+
+[data-theme = 'dark'] {
+    --font-color:#F7FAFC;
+    --background-color:#1A202C;
+    --accent-color:#9AE6B4;
+    --nav-bg:#1a202c70;
+    --link-color:#B2F5EA;
+    --toggle-bg:#F6AD55;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color:var(--font-color);
+    text-decoration: none;
+}
+
+.container  {
+    width: 100%;
+    max-width:1280px;
+    padding: 2rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.link-button {
+    all: unset;
+    background-color: var(--accent-color);
+    padding: .5rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+}
+.link-button a {
+    color: var(--always-light);
+}
+
+/* PAGES */
+@import url(./pages/Pages.css);
+
+/* COMPONENTS */
+@import url(./components/Components.css);
