@@ -1,4 +1,5 @@
-import { BrowserRouter,Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import Homepage from './pages/Homepage'
 import About from './pages/About'
 import Posts from './pages/Posts'
@@ -7,25 +8,30 @@ import WorkSingle from './pages/WorkSingle'
 import PostSingle from './pages/PostSingle'
 import NotFound from './pages/NotFound'
 
-import Nav from "./components/Nav"
+import Nav from './components/Nav'
 import Footer from './components/Footer'
 
 const App = () => {
-    return <BrowserRouter>
-       <Nav/>
-        <main className='container spacing-top'>
-        <Routes>
-        <Route index element={<Homepage/>} />
-        <Route path='about' element={<About/>} />
-        <Route path='posts' element={<Posts/>} />
-        <Route path='work' element={<Work/>} />
-        <Route path='work/:slug' element={<WorkSingle/>} />
-        <Route path='posts/:slug' element={<PostSingle/>} />
-        <Route path="*" element={<NotFound />} />
-        </Routes>
-        </main>
-        <Footer/>
-        </BrowserRouter>
+  return (
+    <BrowserRouter>
+      <Nav />
+      <main className="container">
+        <AnimatePresence exitBeforeEnter>
+          <Routes>
+            <Route index element={<Homepage />} />
+            <Route path="about" element={<About />} />
+            <Route path="posts" element={<Posts />} />
+            <Route path="work" element={<Work />} />
+            <Route path="work/:slug" element={<WorkSingle />} />
+            <Route path="posts/:slug" element={<PostSingle />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
 export default App

@@ -1,75 +1,73 @@
 .header,
 .contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
 }
 
 .header > div,
 .contact-container > div {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .header h2 {
-    font-size: 7rem;
-    line-height: 1em;
+  font-size: 7rem;
+  line-height: 1em;
 }
 
 .header h3 {
-    font-size: 4rem;
-    color: var(--accent-color);
-    line-height: 1em;
+  font-size: 4rem;
+  color: var(--accent-color);
+  line-height: 1em;
 }
 
 .header-copy p,
 .contact-copy p {
-    text-align: justify;
-    font-size: 1.2rem;
-    line-height: 1.5em;
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.5em;
 }
 
 .header-copy a {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 
 section {
-    padding: 2rem 0;
-    text-align: center;
+  padding: 2rem 0;
+  text-align: center;
 }
 
 section h2 {
-    font-size: 2rem;
-    text-align: inherit;
+  font-size: 2rem;
+  text-align: inherit;
 }
 
 .card-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 20px;
 }
 
-@media only screen and (max-width:600px) {
-.header,
-.contact-container,
-.card-row {
+@media only screen and (max-width: 600px) {
+  .header,
+  .contact-container,
+  .card-row {
     flex-direction: column;
     margin: 2rem 0;
     gap: 20px;
-}
-.header > div,
-.contact-container > div {
+  }
+  .header > div,
+  .contact-container > div {
     max-width: 100%;
-}
-.header h2 {
+  }
+  .header h2 {
     font-size: 3.5rem;
-}
-.header h3 {
+  }
+  .header h3 {
     font-size: 2rem;
-}
-
-
+  }
 }

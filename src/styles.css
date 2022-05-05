@@ -1,61 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-    --font-color:#1A202C;
-    --background-color:#F7FAFC;
-    --accent-color:#68D391;
-    --nav-bg:#f7fafc70;
-    --link-color:#81E6D9;
-    --toggle-bg:#6B46C1;
-    --always-light:#F7FAFC;
+  --font-color: #1a202c;
+  --background-color: #f7fafc;
+  --accent-color: #68d391;
+  --nav-bg: #f7fafc70;
+  --link-color: #81e6d9;
+  --toggle-bg: #6b46c1;
+  --always-light: #f7fafc;
+  --box-shadow: 0 2px 2px #17192350;
 }
 
-[data-theme = 'dark'] {
-    --font-color:#F7FAFC;
-    --background-color:#1A202C;
-    --accent-color:#9AE6B4;
-    --nav-bg:#1a202c70;
-    --link-color:#B2F5EA;
-    --toggle-bg:#F6AD55;
+[data-theme='dark'] {
+  --font-color: #f7fafc;
+  --background-color: #1a202c;
+  --accent-color: #9ae6b4;
+  --nav-bg: #1a202c70;
+  --link-color: #b2f5ea;
+  --toggle-bg: #f6ad55;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--background-color);
-    color: var(--font-color);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  transition: all 200ms;
 }
 
 p {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 a {
-    color:var(--font-color);
-    text-decoration: none;
+  color: var(--font-color);
+  text-decoration: none;
 }
 
-.container  {
-    width: 100%;
-    max-width:1280px;
-    padding: 2rem;
-    margin: 0 auto;
-    position: relative;
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  margin: 0 auto;
+  position: relative;
+  transition: all 200ms;
 }
 
 .link-button {
-    all: unset;
-    background-color: var(--accent-color);
-    padding: .5rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1.5rem;
+  all: unset;
+  background-color: var(--accent-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  box-shadow: var(--box-shadow);
 }
 .link-button a {
-    color: var(--always-light);
+  color: var(--always-light);
 }
 
 /* PAGES */
