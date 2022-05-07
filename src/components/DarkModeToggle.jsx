@@ -13,7 +13,7 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     defaultDark && setToDark()
-  }, [])
+  }, [defaultDark])
 
   const setToDark = () => {
     localStorage.setItem('theme', 'dark')

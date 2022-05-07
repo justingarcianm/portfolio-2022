@@ -7,7 +7,7 @@ const CustomLink = ({ children, to, ...props }) => {
       <NavLink
         to={to}
         style={({ isActive }) => ({
-          color: isActive ? 'var(--accent-color)' : 'inherit'
+          color: isActive ? 'var(--accent-color)' : 'var(--font-color)'
         })}
         {...props}
       >

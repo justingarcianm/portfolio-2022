@@ -2,8 +2,8 @@
 .contact-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+  align-items: baseline;
+  gap: 20px;
   text-align: left;
 }
 
@@ -50,6 +50,54 @@ section h2 {
   align-items: center;
   margin: 2rem 0;
   gap: 20px;
+}
+
+.about-copy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: justify;
+  gap: 1rem;
+  justify-items:center;
+  align-items: start;
+}
+
+.about-header-container {
+  position: relative;
+}
+
+.about-header-container h2 {
+  font-size: 5rem;
+}
+
+.about-copy p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+}
+
+.about-image img{
+  border-radius: 100%;
+  width: 100%;
+  max-width: min-content;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill span {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  font-size: 3rem;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills h2,
+.skill h3 {
+  margin: 1rem 0;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-// @props - ({ cardTitle,cardSlug,cardType,cardImg })
-const Card = () => {
+
+const Card = ({ cardTitle,cardSlug,cardImg,cardPath }) => {
   return (
     <Link
-      to="/posts/dfa"
+      to={`/${cardPath}/${cardSlug}`}
       className="card"
-      style={{ backgroundImage: `url(https://bit.ly/dan-abramov)` }}
+      style={{ backgroundImage: `url(${cardImg})` }}
     >
       <motion.div
         className="card-content"
@@ -17,7 +17,7 @@ const Card = () => {
           opacity: 1
         }}
       >
-        <h3>Card Title goes here</h3>
+        <h3>{cardTitle}</h3>
       </motion.div>
     </Link>
   )

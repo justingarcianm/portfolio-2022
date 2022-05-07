@@ -1,16 +1,17 @@
+import ContactForm from "./ContactForm"
+
 const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-copy">
-        <h2>Contact Me</h2>
+        <h2>Let's Talk</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-          neque cum numquam itaque accusantium omnis eveniet quia illo, a iste
-          excepturi? Esse repellat atque et nesciunt animi quia adipisci
-          dolorem.
+          Have a project you think I can help with? Wanna talk about something nerdy? Or just want to say hi. Whatever it may be, shoot me a message and I'll get back to you!
         </p>
       </div>
-      <div className="contact-form"></div>
+      <div className="contact-form">
+        <ContactForm/>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,39 @@
-nav .nav-container,
 .card {
   box-shadow: var(--box-shadow);
+}
+
+nav {
+  width: 100%;
+  position: relative;
+  height: 4rem;
+}
+
+.fixed {
+  position: fixed;
+  width: inherit;
+  max-width: 1280px;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--box-shadow);
+  border-radius: 7px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.links-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.site-links > *{
+  margin: 0 1rem;
+  font-size: 1.1rem;
 }
 
 .underline {
@@ -8,40 +41,8 @@ nav .nav-container,
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 3px;
   background: var(--accent-color);
-}
-
-nav .nav-container {
-  position: fixed;
-  width: inherit;
-  max-width: calc(100% - 14rem);
-  margin: auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--nav-bg);
-  border-radius: 10px;
-  z-index: 10;
-}
-
-nav #home-link {
-  flex-grow: 1;
-}
-
-nav #home-link a h1 {
-  font-weight: 100;
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-
-nav .site-links {
-  display: flex;
-  align-self: center;
-  gap: 15px;
-  margin: 0 2rem;
-  font-size: 1.2rem;
 }
 
 .stacked {
@@ -152,13 +153,49 @@ footer .footer-links {
   font-size: 1.5rem;
 }
 
+.contact-form {
+width: 100%;
+}
+
+.form {
+  padding: 2rem;
+  border-radius: 7px;
+}
+
+.form label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.form input,
+.form textarea {
+  outline: none;
+  border: none;
+  margin-top: .5rem;
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  font-family:'Courier New', Courier, monospace;
+  padding: 1rem;
+  background-color: transparent;
+  border: 2px solid var(--font-color);
+  border-radius: 7px;
+  color: var(--font-color);
+}
+
+.form .link-button {
+  width: -webkit-fill-available;
+}
+
 @media only screen and (max-width: 600px) {
   .stacked-menu {
     display: block;
   }
 
-  nav .nav-container {
-    max-width: calc(100% - 8rem);
+  .fixed {
+    max-width: calc(100% - 4rem);
   }
 
   nav .site-links {

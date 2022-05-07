@@ -12,14 +12,15 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className="container">
-        <div className="nav-container">
+       <div className="fixed">
+       <div className="nav-container">
           <div id="home-link">
             <NavLink to="/">
               <h1>Justin Garcia</h1>
             </NavLink>
           </div>
-          <div className="site-links">
+            <div className="links-container">
+            <div className="site-links">
             <CustomLink to="/about">About</CustomLink>
             <CustomLink to="/work">Work</CustomLink>
             <CustomLink to="/posts">Posts</CustomLink>
@@ -51,15 +52,16 @@ const Nav = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <motion.span whileHover={{ color: 'var(--accent-color)' }}>
+                  <motion.span initial={{color:'var(--font-color)'}} whileHover={{ color: 'var(--accent-color)' }}>
                     <FaGithub /> Source
                   </motion.span>
                 </a>
               </div>
             </div>
           </div>
+            </div>
         </div>
-      </div>
+       </div>
     </nav>
   )
 }

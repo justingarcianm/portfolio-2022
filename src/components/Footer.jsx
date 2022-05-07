@@ -5,7 +5,6 @@ import { CustomLink } from '../lib/CustomElements'
 const Footer = () => {
   return (
     <footer>
-      <div className="container">
         <div className="footer-flex">
           <div className="copyright">&copy; Justin Garcia 2022</div>
           <div className="footer-links-container">
@@ -36,7 +35,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
     </footer>
   )
 }

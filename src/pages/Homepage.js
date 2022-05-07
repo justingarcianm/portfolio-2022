@@ -1,13 +1,28 @@
-// import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import Card from '../components/Card'
 import Contact from '../components/Contact'
 import { pageVariant, pageTransition } from '../lib/variants'
+import { fetchData } from '../lib/ApiCalls'
 const Homepage = () => {
-  // const [ work,setWork ] = useState([])
-  // const [ posts,setPosts ] = useState([])
+
+  const [ works,setWorks ] = useState([])
+  const [ posts,setPosts ] = useState([])
+  const [ loaded,setLoaded ] = useState(false)
+
+  useEffect(() => {
+    fetchData('works')
+    .then( works => setWorks(works) )
+    fetchData('posts')
+    .then( posts => setPosts(posts) )
+
+    setLoaded(true)
+
+  },[])
+  
+
   return (
     <motion.div
       initial="out"
@@ -36,9 +51,13 @@ const Homepage = () => {
       <section className="work">
         <h2>My Work</h2>
         <div className="card-row">
-          <Card />
-          <Card />
-          <Card />
+         { loaded && works.map( work => <Card 
+                                          key={work.id} 
+                                          cardTitle={work.attributes.workTitle}
+                                          cardImg={work.attributes.workImage.data.attributes.formats.medium.url}
+                                          cardSlug={work.attributes.workSlug}
+                                          cardPath='work'
+                                          /> ) }
         </div>
         <motion.button
           className="link-button"
@@ -51,9 +70,13 @@ const Homepage = () => {
       <section className="posts">
         <h2>Recent Posts</h2>
         <div className="card-row">
-          <Card />
-          <Card />
-          <Card />
+        { loaded && posts.map( post => <Card 
+                                          key={post.id} 
+                                          cardTitle={post.attributes.workTitle}
+                                          cardImg={post.attributes.workImage.data.attributes.formats.medium.url}
+                                          cardSlug={post.attributes.workSlug}
+                                          cardPath='post'
+                                          /> ) }
         </div>
 
         <motion.button

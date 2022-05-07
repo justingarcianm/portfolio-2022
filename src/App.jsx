@@ -14,8 +14,8 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <main className="container">
+      <Nav />
         <AnimatePresence exitBeforeEnter>
           <Routes>
             <Route index element={<Homepage />} />
@@ -27,9 +27,8 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
-      </main>
-
       <Footer />
+      </main>
     </BrowserRouter>
   )
 }
