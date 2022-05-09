@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { pageVariant, pageTransition } from '../lib/variants'
 import Contact from '../components/Contact'
+import me from '../images/me.jpg'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
@@ -14,15 +15,15 @@ const About = () => {
     >
       <section className="about-copy">
         <div className="about-header">
-         <div className='about-header-container'>
-         <h2>About Justin</h2>
-          <motion.div 
-          className='underline'
-          initial={{width:0}}
-          animate={{width:'60%'}}
-          transition={{duration:1, delay:.5}}
-          />
-         </div>
+          <div className="about-header-container">
+            <h2>About Justin</h2>
+            <motion.div
+              className="underline"
+              initial={{ width: 0 }}
+              animate={{ width: '60%' }}
+              transition={{ duration: 1, delay: 0.5 }}
+            />
+          </div>
           <div className="about-content">
             <p>
               I started practicing Web Development in 2018 and I haven&apos;t
@@ -34,8 +35,8 @@ const About = () => {
               adage,
             </p>
             <blockquote>
-              &ldquo;<strong>Luck</strong> is what happens when preparation meets
-              opportunity.&ldquo; &#8211; Seneca
+              &ldquo;<strong>Luck</strong> is what happens when preparation
+              meets opportunity.&ldquo; &#8211; Seneca
             </blockquote>
             <p>
               I am a textbook nerd who plays video games and reads comics in my
@@ -49,7 +50,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-image">
-          <img src="https://bit.ly/dan-abramov" alt='Justin Garcia' />
+          <img src={me} alt="Justin Garcia" />
         </div>
       </section>
       {/* <section className="skills">

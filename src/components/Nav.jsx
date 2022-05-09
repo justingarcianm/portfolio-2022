@@ -12,56 +12,59 @@ const Nav = () => {
 
   return (
     <nav>
-       <div className="fixed">
-       <div className="nav-container">
+      <div className="fixed">
+        <div className="nav-container">
           <div id="home-link">
             <NavLink to="/">
               <h1>Justin Garcia</h1>
             </NavLink>
           </div>
-            <div className="links-container">
+          <div className="links-container">
             <div className="site-links">
-            <CustomLink to="/about">About</CustomLink>
-            <CustomLink to="/work">Work</CustomLink>
-            <CustomLink to="/posts">Posts</CustomLink>
-            <a
-              href="https://github.com/justingarcianm/Portfolio-2022"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <motion.span
-                initial={{ color: 'var(--font-color)' }}
-                whileHover={{ color: 'var(--accent-color)' }}
+              <CustomLink to="/about">About</CustomLink>
+              <CustomLink to="/work">Work</CustomLink>
+              <CustomLink to="/posts">Posts</CustomLink>
+              <a
+                href="https://github.com/justingarcianm/Portfolio-2022"
+                target="_blank"
+                rel="noreferrer"
               >
-                <FaGithub /> Source
-              </motion.span>
-            </a>
-          </div>
-          <div className="stacked">
-            <DarkModeToggle />
-            <div className="stacked-menu">
-              <div className="stacked-btn" onClick={toggleMenu}>
-                <CgMenu />
-              </div>
-              <div className="menu-list">
-                <CustomLink to="/about">About</CustomLink>
-                <CustomLink to="/work">Work</CustomLink>
-                <CustomLink to="/posts">Posts</CustomLink>
-                <a
-                  href="https://github.com/justingarcianm/Portfolio-2022"
-                  target="_blank"
-                  rel="noreferrer"
+                <motion.span
+                  initial={{ color: 'var(--font-color)' }}
+                  whileHover={{ color: 'var(--accent-color)' }}
                 >
-                  <motion.span initial={{color:'var(--font-color)'}} whileHover={{ color: 'var(--accent-color)' }}>
-                    <FaGithub /> Source
-                  </motion.span>
-                </a>
+                  <FaGithub /> Source
+                </motion.span>
+              </a>
+            </div>
+            <div className="stacked">
+              <DarkModeToggle />
+              <div className="stacked-menu">
+                <div className="stacked-btn" onClick={toggleMenu}>
+                  <CgMenu />
+                </div>
+                <div className="menu-list">
+                  <CustomLink to="/about">About</CustomLink>
+                  <CustomLink to="/work">Work</CustomLink>
+                  <CustomLink to="/posts">Posts</CustomLink>
+                  <a
+                    href="https://github.com/justingarcianm/Portfolio-2022"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <motion.span
+                      initial={{ color: 'var(--font-color)' }}
+                      whileHover={{ color: 'var(--accent-color)' }}
+                    >
+                      <FaGithub /> Source
+                    </motion.span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-            </div>
         </div>
-       </div>
+      </div>
     </nav>
   )
 }

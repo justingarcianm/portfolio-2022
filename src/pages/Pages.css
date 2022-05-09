@@ -57,7 +57,7 @@ section h2 {
   grid-template-columns: 1fr 1fr;
   text-align: justify;
   gap: 1rem;
-  justify-items:center;
+  justify-items: center;
   align-items: start;
 }
 
@@ -74,10 +74,11 @@ section h2 {
   line-height: 1.5rem;
 }
 
-.about-image img{
+.about-image img {
   border-radius: 100%;
   width: 100%;
-  max-width: min-content;
+  max-width: 450px;
+  box-shadow: var(--box-shadow);
 }
 
 .skills-container {
@@ -98,6 +99,13 @@ section h2 {
 .skills h2,
 .skill h3 {
   margin: 1rem 0;
+}
+
+.work-header,
+.post-header {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2.5rem 0;
 }
 
 @media only screen and (max-width: 600px) {

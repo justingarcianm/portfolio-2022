@@ -10,7 +10,10 @@ const Posts = () => {
       variants={pageVariant}
       transition={pageTransition}
     >
-      Posts
+      <div className="post-header">
+        <h2>Posts</h2>
+      </div>
+      <div className="post-list"></div>
     </motion.div>
   )
 }

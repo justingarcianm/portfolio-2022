@@ -15,7 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <main className="container">
-      <Nav />
+        <Nav />
         <AnimatePresence exitBeforeEnter>
           <Routes>
             <Route index element={<Homepage />} />
@@ -27,7 +27,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
-      <Footer />
+        <Footer />
       </main>
     </BrowserRouter>
   )

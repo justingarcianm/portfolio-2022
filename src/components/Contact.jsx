@@ -1,4 +1,4 @@
-import ContactForm from "./ContactForm"
+import ContactForm from './ContactForm'
 
 const Contact = () => {
   return (
@@ -6,11 +6,13 @@ const Contact = () => {
       <div className="contact-copy">
         <h2>Let's Talk</h2>
         <p>
-          Have a project you think I can help with? Wanna talk about something nerdy? Or just want to say hi. Whatever it may be, shoot me a message and I'll get back to you!
+          Have a project you think I can help with? Wanna talk about something
+          nerdy? Or just want to say hi. Whatever it may be, shoot me a message
+          and I'll get back to you!
         </p>
       </div>
       <div className="contact-form">
-        <ContactForm/>
+        <ContactForm />
       </div>
     </div>
   )

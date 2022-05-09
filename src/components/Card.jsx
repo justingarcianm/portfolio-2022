@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-const Card = ({ cardTitle,cardSlug,cardImg,cardPath }) => {
+const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
   return (
     <Link
       to={`/${cardPath}/${cardSlug}`}

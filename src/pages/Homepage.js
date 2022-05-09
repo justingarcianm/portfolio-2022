@@ -7,21 +7,16 @@ import Contact from '../components/Contact'
 import { pageVariant, pageTransition } from '../lib/variants'
 import { fetchData } from '../lib/ApiCalls'
 const Homepage = () => {
-
-  const [ works,setWorks ] = useState([])
-  const [ posts,setPosts ] = useState([])
-  const [ loaded,setLoaded ] = useState(false)
+  const [works, setWorks] = useState([])
+  const [posts, setPosts] = useState([])
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    fetchData('works')
-    .then( works => setWorks(works) )
-    fetchData('posts')
-    .then( posts => setPosts(posts) )
+    fetchData('works').then(works => setWorks(works))
+    fetchData('posts').then(posts => setPosts(posts))
 
     setLoaded(true)
-
-  },[])
-  
+  }, [])
 
   return (
     <motion.div
@@ -51,32 +46,42 @@ const Homepage = () => {
       <section className="work">
         <h2>My Work</h2>
         <div className="card-row">
-         { loaded && works.map( work => <Card 
-                                          key={work.id} 
-                                          cardTitle={work.attributes.workTitle}
-                                          cardImg={work.attributes.workImage.data.attributes.formats.medium.url}
-                                          cardSlug={work.attributes.workSlug}
-                                          cardPath='work'
-                                          /> ) }
+          {loaded &&
+            works.map(work => (
+              <Card
+                key={work.id}
+                cardTitle={work.attributes.workTitle}
+                cardImg={
+                  work.attributes.workImage.data.attributes.formats.medium.url
+                }
+                cardSlug={work.attributes.workSlug}
+                cardPath="work"
+              />
+            ))}
         </div>
         <motion.button
           className="link-button"
           whileHover={{ scale: 1.05 }}
           transition={{ type: 'spring', stiffness: 100 }}
         >
-          <Link to="/posts">View All</Link>
+          <Link to="/work">View All</Link>
         </motion.button>
       </section>
       <section className="posts">
         <h2>Recent Posts</h2>
         <div className="card-row">
-        { loaded && posts.map( post => <Card 
-                                          key={post.id} 
-                                          cardTitle={post.attributes.workTitle}
-                                          cardImg={post.attributes.workImage.data.attributes.formats.medium.url}
-                                          cardSlug={post.attributes.workSlug}
-                                          cardPath='post'
-                                          /> ) }
+          {loaded &&
+            posts.map(post => (
+              <Card
+                key={post.id}
+                cardTitle={post.attributes.workTitle}
+                cardImg={
+                  post.attributes.workImage.data.attributes.formats.medium.url
+                }
+                cardSlug={post.attributes.workSlug}
+                cardPath="post"
+              />
+            ))}
         </div>
 
         <motion.button

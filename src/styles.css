@@ -18,7 +18,13 @@
   --nav-bg: #1a202c70;
   --link-color: #b2f5ea;
   --toggle-bg: #f6ad55;
-  --box-shadow: 0 2px 2px #000;
+  --shadow-color: 0deg 0% 50%;
+  --box-shadow: 1px 2px 2px hsl(var(--shadow-color) / 0.2),
+    2px 4px 4px hsl(var(--shadow-color) / 0.2),
+    4px 8px 8px hsl(var(--shadow-color) / 0.2),
+    8px 16px 16px hsl(var(--shadow-color) / 0.2),
+    16px 32px 32px hsl(var(--shadow-color) / 0.2) `;
+  --border-radius: 7px;
 }
 
 * {
@@ -35,7 +41,7 @@ body {
 
 h1 {
   font-weight: 100;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   font-size: 2.1rem;
 }
 
