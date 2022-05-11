@@ -1,17 +1,10 @@
-import { motion } from 'framer-motion'
-import { pageVariant, pageTransition } from '../lib/variants'
+import { PageDiv } from '../lib/CustomElements'
 
-const PostSingle = () => {
+const PostSingle = ({ title,description }) => {
   return (
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageVariant}
-      transition={pageTransition}
-    >
+    <PageDiv title={title} description={description} >
       PostSingle
-    </motion.div>
+    </PageDiv>
   )
 }
 

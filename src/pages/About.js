@@ -1,18 +1,12 @@
 import { motion } from 'framer-motion'
-import { pageVariant, pageTransition } from '../lib/variants'
+import { PageDiv } from '../lib/CustomElements'
 import Contact from '../components/Contact'
 import me from '../images/me.jpg'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
   return (
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageVariant}
-      transition={pageTransition}
-    >
+    <PageDiv title='About' description='Short bio of Justin Garcia' >
       <section className="about-copy">
         <div className="about-header">
           <div className="about-header-container">
@@ -94,7 +88,7 @@ const About = () => {
       <section className="contact">
         <Contact />
       </section>
-    </motion.div>
+    </PageDiv>
   )
 }
 

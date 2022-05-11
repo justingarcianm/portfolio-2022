@@ -4,28 +4,20 @@ import { motion } from 'framer-motion'
 
 import Card from '../components/Card'
 import Contact from '../components/Contact'
-import { pageVariant, pageTransition } from '../lib/variants'
 import { fetchData } from '../lib/ApiCalls'
+import { PageDiv } from '../lib/CustomElements'
+
 const Homepage = () => {
   const [works, setWorks] = useState([])
   const [posts, setPosts] = useState([])
-  const [loaded, setLoaded] = useState(false)
 
-  useEffect(() => {
-    fetchData('works').then(works => setWorks(works))
-    fetchData('posts').then(posts => setPosts(posts))
-
-    setLoaded(true)
+  useEffect( () => {
+    fetchData('works','pagination[limit]=3').then(works => setWorks(works))
+    fetchData('posts','pagination[limit]=3').then(posts => setPosts(posts))
   }, [])
 
   return (
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageVariant}
-      transition={pageTransition}
-    >
+    <PageDiv title='Home' description='Welcome to my portfolio site!' >
       <section className="header">
         <div className="header-title">
           <h2>Hi, my name is Justin</h2>
@@ -46,13 +38,12 @@ const Homepage = () => {
       <section className="work">
         <h2>My Work</h2>
         <div className="card-row">
-          {loaded &&
-            works.map(work => (
+          {works.length > 0 && works.map(work => (
               <Card
                 key={work.id}
                 cardTitle={work.attributes.workTitle}
                 cardImg={
-                  work.attributes.workImage.data.attributes.formats.medium.url
+                  work.attributes.workImage.data.attributes.formats.thumbnail.url
                 }
                 cardSlug={work.attributes.workSlug}
                 cardPath="work"
@@ -70,15 +61,14 @@ const Homepage = () => {
       <section className="posts">
         <h2>Recent Posts</h2>
         <div className="card-row">
-          {loaded &&
-            posts.map(post => (
+          {posts.length > 0 && posts.map(post => (
               <Card
                 key={post.id}
-                cardTitle={post.attributes.workTitle}
+                cardTitle={post.attributes.postTitle}
                 cardImg={
-                  post.attributes.workImage.data.attributes.formats.medium.url
+                  post.attributes.postImage.data.attributes.formats.thumbnail.url
                 }
-                cardSlug={post.attributes.workSlug}
+                cardSlug={post.attributes.postSlug}
                 cardPath="post"
               />
             ))}
@@ -95,7 +85,7 @@ const Homepage = () => {
       <section className="contact">
         <Contact />
       </section>
-    </motion.div>
+    </PageDiv>
   )
 }
 

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const ContactForm = () => {
+  const API_URL =
+  process.env.REACT_APP_API_PROD || process.env.REACT_APP_API_LOCAL
   const [btnText, setBtnText] = useState('Submit')
   const [disabled, setDisabled] = useState(false)
   const [status, setStatus] = useState('')
@@ -13,13 +15,13 @@ const ContactForm = () => {
     const { name, email, message } = e.target.elements
     let content = {
       data: {
-        name: name.value,
-        email: email.value,
-        messageBody: message.value
+        fullName: name.value,
+        formEmail: email.value,
+        emailBody: message.value
       }
     }
     try {
-      let response = await fetch('http://localhost:1337/api/messages', {
+      let response = await fetch(`${API_URL}messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -33,7 +35,7 @@ const ContactForm = () => {
       console.log(err)
       setBtnText('Oops...')
       setStatus(
-        `Looks like something happened and I didn't get your message. If you are continuing to see this, try this: justingarcianm@gmail.com`
+        `Looks like something happened and I didn't get your message. If you are continuing to see this, send your inquires to: justingarcianm@gmail.com`
       )
     }
   }

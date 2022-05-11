@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
 
-const Listing = () => {
+const Listing = ({ work }) => {
+
+  const { workTitle, workImage, workSlug, workDescription, repoLink, liveLink } = work
+
   return (
     <motion.div
       initial={{ opacity: 0, x: '-100vw' }}
@@ -11,29 +14,34 @@ const Listing = () => {
       className="listing-container"
     >
       <div className="listing-img">
-        <img src="" alt="" />
+        <img src={workImage.data.attributes.formats.single.url} alt={workTitle} />
       </div>
       <div className="listing-content">
-        <h3>Title</h3>
+        <h3>{workTitle}</h3>
         <div className="listing-description">
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-            repellendus pariatur velit odio voluptas ut eius nulla, dicta
-            obcaecati. Eius.
+           {workDescription}
           </p>
         </div>
         <div className="listing-links">
           <div className="page-link">
-            <button className="link-button">Read More</button>
+            <button className="link-button">
+              <Link to={
+                {
+                  pathname:`${workSlug}`, 
+                  work:work
+              } 
+                } >Read More</Link>
+            </button>
           </div>
           <div className="project-links">
-            <Link to="#">
+            <Link to={`${repoLink}`} target="_blank">
               <motion.span whileHover={{ color: 'var(--accent-color)' }}>
                 {' '}
                 <FaGithub /> Repo
               </motion.span>
             </Link>
-            <Link to="#">
+            <Link to={`${liveLink}`} target="_blank" >
               {' '}
               <motion.span whileHover={{ color: 'var(--accent-color)' }}>
                 <FaLink /> Demo
