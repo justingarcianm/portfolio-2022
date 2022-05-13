@@ -1,31 +1,31 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa'
 import { CgMenu } from 'react-icons/cg'
 import DarkModeToggle from './DarkModeToggle'
-import { CustomLink } from '../lib/CustomElements'
-const Nav = () => {
-  const toggleMenu = () => {
-    const menu = document.querySelector('.menu-list')
-    return menu.classList.toggle('open')
-  }
+import NavLink from './navLink'
+import { NavBar,NavWrapper, Fixed, NavLinksWrapper, Stacked, StackedBtn, MenuLinks } from '../utils/CustomElements'
+const Nav = (props) => {
+
+  const { path } = props
+  const [ display, setDisplay ] = useState(false)
+  const toggleMenu = () => setDisplay(!display)
 
   return (
-    <nav>
-      <div className="fixed">
-        <div className="nav-container">
-          <div id="home-link">
+    <NavBar>
+      <Fixed>
+        <NavWrapper>
             <h1>
             <Link href="/">
               Justin Garcia
             </Link>
             </h1>
-          </div>
-          <div className="links-container">
+          <NavLinksWrapper>
             <div className="site-links">
-              <CustomLink to="/about">About</CustomLink>
-              <CustomLink to="/work">Work</CustomLink>
-              <CustomLink to="/posts">Posts</CustomLink>
+              <NavLink path={path} href="/about">About</NavLink>
+              <NavLink path={path} href="/work">Work</NavLink>
+              <NavLink path={path} href="/posts">Posts</NavLink>
               <Link
                 href="https://github.com/justingarcianm/Portfolio-2022"
                 target="_blank"
@@ -39,16 +39,16 @@ const Nav = () => {
                 </motion.span>
               </Link>
             </div>
-            <div className="stacked">
+            <Stacked>
               <DarkModeToggle />
               <div className="stacked-menu">
-                <div className="stacked-btn" onClick={toggleMenu}>
+                <StackedBtn onClick={toggleMenu}>
                   <CgMenu />
-                </div>
-                <div className="menu-list">
-                  <CustomLink to="/about">About</CustomLink>
-                  <CustomLink to="/work">Work</CustomLink>
-                  <CustomLink to="/posts">Posts</CustomLink>
+                </StackedBtn>
+                <MenuLinks display={display}>
+                  <Link path={path} href="/about">About</Link>
+                  <Link path={path} href="/work">Work</Link>
+                  <Link path={path} href="/posts">Posts</Link>
                   <Link
                     href="https://github.com/justingarcianm/Portfolio-2022"
                     target="_blank"
@@ -57,17 +57,18 @@ const Nav = () => {
                     <motion.span
                       initial={{ color: 'var(--font-color)' }}
                       whileHover={{ color: 'var(--accent-color)' }}
+                      style={{cursor:'pointer'}}
                     >
                       <FaGithub /> Source
                     </motion.span>
                   </Link>
-                </div>
+                </MenuLinks>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+            </Stacked>
+          </NavLinksWrapper>
+        </NavWrapper>
+      </Fixed>
+    </NavBar>
   )
 }
 

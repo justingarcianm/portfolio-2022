@@ -1,18 +1,18 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { CustomLink } from '../lib/CustomElements'
+import NavLink from './navLink'
+import { FooterContainer } from '../utils/CustomElements'
 
-const Footer = () => {
+const Footer = ({ path }) => {
   return (
-    <footer>
-      <div className="footer-flex">
+    <FooterContainer>
         <div className="copyright">&copy; Justin Garcia 2022</div>
         <div className="footer-links-container">
           <div className="footer-links">
-            <CustomLink to="/about">About</CustomLink>
-            <CustomLink to="/work">Work</CustomLink>
-            <CustomLink to="/posts">Posts</CustomLink>
+            <NavLink path={path} href="/about">About</NavLink>
+            <NavLink path={path} href="/work">Work</NavLink>
+            <NavLink path={path} href="/posts">Posts</NavLink>
           </div>
           <div className="social">
             <Link
@@ -35,8 +35,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </footer>
+    </FooterContainer>
   )
 }
 

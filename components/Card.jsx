@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
   return (
     <Link
-      to={`/${cardPath}/${cardSlug}`}
+      href={`/${cardPath}/${cardSlug}`}
       className="card"
       style={{ backgroundImage: `url(${cardImg})` }}
     >

@@ -1,6 +1,7 @@
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { ToggleBtn } from '../utils/CustomElements'
 
 const DarkModeToggle = () => {
 
@@ -29,7 +30,7 @@ const DarkModeToggle = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <motion.div
+      <ToggleBtn
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
@@ -38,9 +39,8 @@ const DarkModeToggle = () => {
         onTap={() => toggleTheme()}
         key={darkTheme ? FaSun : FaMoon}
       >
-        toggle
         {darkTheme ? <FaSun /> : <FaMoon />}
-      </motion.div>
+      </ToggleBtn>
     </AnimatePresence>
   )
 }

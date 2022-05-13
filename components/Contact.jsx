@@ -1,8 +1,14 @@
-import ContactForm from './ContactForm'
-
-const Contact = () => {
+import ContactForm from './contactForm'
+import { ContactSection } from '../utils/CustomElements'
+import { pageVariant } from '../utils/motionVars'
+const Contact = ({delay}) => {
   return (
-    <div className="contact-container">
+    <ContactSection className="contact-container"
+    initial='out'
+    animate='in'
+    variants={pageVariant}
+    transition={{delay:delay || 0, duration: 1}}
+    >
       <div className="contact-copy">
         <h2>Let's Talk</h2>
         <p>
@@ -14,7 +20,7 @@ const Contact = () => {
       <div className="contact-form">
         <ContactForm />
       </div>
-    </div>
+    </ContactSection>
   )
 }
 
