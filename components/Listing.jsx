@@ -1,10 +1,17 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
+import { Paragraph } from '../utils/CustomElements'
 
 const Listing = ({ work }) => {
-
-  const { workTitle, workImage, workSlug, workDescription, repoLink, liveLink } = work
+  const {
+    workTitle,
+    workImage,
+    workSlug,
+    workDescription,
+    repoLink,
+    liveLink
+  } = work
 
   return (
     <motion.div
@@ -14,19 +21,20 @@ const Listing = ({ work }) => {
       className="listing-container"
     >
       <div className="listing-img">
-        <img src={workImage.data.attributes.formats.single.url} alt={workTitle} />
+        <img
+          src={workImage.data.attributes.formats.single.url}
+          alt={workTitle}
+        />
       </div>
       <div className="listing-content">
         <h3>{workTitle}</h3>
         <div className="listing-description">
-          <p>
-           {workDescription}
-          </p>
+          <Paragraph>{workDescription}</Paragraph>
         </div>
         <div className="listing-links">
           <div className="page-link">
             <button className="link-button">
-              <Link href={`${workSlug}`} >Read More</Link>
+              <Link href={`${workSlug}`}>Read More</Link>
             </button>
           </div>
           <div className="project-links">
@@ -36,7 +44,7 @@ const Listing = ({ work }) => {
                 <FaGithub /> Repo
               </motion.span>
             </Link>
-            <Link href={`${liveLink}`} target="_blank" >
+            <Link href={`${liveLink}`} target="_blank">
               {' '}
               <motion.span whileHover={{ color: 'var(--accent-color)' }}>
                 <FaLink /> Demo

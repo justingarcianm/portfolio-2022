@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Input, Button } from '../utils/CustomElements'
+import { sendData } from '../utils/frontFetch'
 
 const ContactForm = () => {
   const API_URL =
-  process.env.REACT_APP_API_PROD || process.env.REACT_APP_API_LOCAL
+    process.env.REACT_APP_API_PROD || process.env.REACT_APP_API_LOCAL
   const [btnText, setBtnText] = useState('Submit')
   const [disabled, setDisabled] = useState(false)
   const [status, setStatus] = useState('')
-
   const handleSubmit = async e => {
     e.preventDefault()
     setDisabled(true)
@@ -21,13 +22,7 @@ const ContactForm = () => {
       }
     }
     try {
-      let response = await fetch(`${API_URL}messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(content)
-      })
+      const response = await sendData(content)
       setBtnText('Sent!!')
       setStatus("Thanks for reaching out. I'll get back to you soon!")
       return response
@@ -41,9 +36,12 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <div className="input-group">
-        <motion.input
+    <form
+      onSubmit={handleSubmit}
+      style={{ borderRadius: '--border-radius', padding: '2rem' }}
+    >
+      <div style={{ marginBottom: '1rem' }}>
+        <Input
           type="text"
           id="name"
           required
@@ -52,8 +50,8 @@ const ContactForm = () => {
           transition={{ duration: 0.5 }}
         />
       </div>
-      <div className="input-group">
-        <motion.input
+      <div style={{ marginBottom: '1rem' }}>
+        <Input
           type="email"
           id="email"
           required
@@ -63,8 +61,9 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="input-group">
-        <motion.textarea
+      <div style={{ marginBottom: '1rem' }}>
+        <Input
+          as="textarea"
           id="message"
           rows="5"
           required
@@ -74,15 +73,15 @@ const ContactForm = () => {
         />
       </div>
 
-      <motion.button
+      <Button
         type="submit"
-        className="link-button"
+        as={motion.button}
         disabled={disabled}
         whileHover={{ scaleY: 1.1 }}
         transition={{ type: 'spring', stiffness: 100 }}
       >
         {btnText}
-      </motion.button>
+      </Button>
       <p>{status}</p>
     </form>
   )

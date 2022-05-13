@@ -1,3 +1,3 @@
-const Social = () =>  {
-    return <p>Share links</p>
+const Social = () => {
+  return <p>Share links</p>
 }

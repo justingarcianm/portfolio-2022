@@ -1,13 +1,12 @@
-
 import Head from 'next/head'
-import { Container } from "../../utils/CustomElements";
-import Nav from "../nav";
-import Footer from "../footer";
+import { Container } from '../../utils/CustomElements'
+import Nav from '../nav'
+import Footer from '../footer'
 
-export default function Layout({children}) {
-    return <>
-        <Head>
-
+export default function Layout({ children }) {
+  return (
+    <>
+      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Justin's Portfolio Site" />
         <meta name="author" content="Justin Garcia" />
@@ -19,11 +18,10 @@ export default function Layout({children}) {
         <meta property="og:type" content="website" />
         {/* <meta property="og:image" content="https://www.craftz.dog/card.png" /> */}
         <title>Justin Garcia</title>
-        </Head>
-        <Nav path={router.asPath} />
-    <Container>
-      {children}
-    </Container>
-        <Footer path={router.asPath} />
+      </Head>
+      <Nav path={router.asPath} />
+      <Container>{children}</Container>
+      <Footer path={router.asPath} />
     </>
+  )
 }
