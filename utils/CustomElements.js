@@ -29,6 +29,9 @@ export const Container = styled.div`
   position: relative;
   transition: all 200ms;
 `
+export const PostContainer = styled(Container)`
+  max-width:1000px;
+`;
 
 export const SectionDiv = styled(motion.section)`
   display: grid;

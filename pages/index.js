@@ -11,6 +11,7 @@ import {
 import Link from 'next/link'
 import { fetchData } from '../utils/frontFetch'
 
+
 const Home = ({ worksData, postsData }) => {
   return (
     <>
@@ -54,7 +55,7 @@ const Home = ({ worksData, postsData }) => {
             cardTitle={post.attributes.postTitle}
             cardSlug={post.attributes.postSlug}
             cardImg={post.attributes.postImage.data.attributes.formats.thumbnail.url}
-            cardPath={'work'}
+            cardPath={'posts'}
           />
         } ) }
         </Section>
