@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { pageVariant, pageTransition } from '../../lib/variants'
+import { pageVariant, pageTransition } from '../../utils/motionVars'
 import { useParams } from 'react-router-dom'
 import { fetchData } from '../../lib/ApiCalls'
 

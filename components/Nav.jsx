@@ -31,7 +31,7 @@ const Nav = props => {
               <NavLink path={path} href="/about">
                 About
               </NavLink>
-              <NavLink path={path} href="/work">
+              <NavLink path={path} href="/works">
                 Work
               </NavLink>
               <NavLink path={path} href="/posts">
@@ -60,7 +60,7 @@ const Nav = props => {
                   <Link path={path} href="/about">
                     About
                   </Link>
-                  <Link path={path} href="/work">
+                  <Link path={path} href="/works">
                     Work
                   </Link>
                   <Link path={path} href="/posts">

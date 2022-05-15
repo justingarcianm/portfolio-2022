@@ -9,8 +9,9 @@ import {
   IndexSubHeading
 } from '../utils/CustomElements'
 import Link from 'next/link'
+import { fetchData } from '../utils/frontFetch'
 
-const Home = () => {
+const Home = ({ worksData, postsData }) => {
   return (
     <>
       <Section delay={0.2} cols={2}>
@@ -32,24 +33,13 @@ const Home = () => {
       <Section delay={0.4}>
         <SectionTitle>My Work</SectionTitle>
         <Section cols={3}>
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
+          { worksData && worksData.map( work => <Card
+          key={work.id}
+            cardTitle={work.attributes.workTitle}
+            cardSlug={work.attributes.workSlug}
+            cardImg={work.attributes.workImage.data.attributes.formats.thumbnail.url}
             cardPath={'work'}
-          />
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
-            cardPath={'work'}
-          />
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
-            cardPath={'work'}
-          />
+          /> ) }
         </Section>
         <Button>
           <Link href="/works"> View All </Link>
@@ -58,24 +48,15 @@ const Home = () => {
       <Section delay={0.6}>
         <SectionTitle>Latest Posts</SectionTitle>
         <Section cols={3}>
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
+        { postsData && postsData.map( post => {
+          return <Card
+          key={post.id}
+            cardTitle={post.attributes.postTitle}
+            cardSlug={post.attributes.postSlug}
+            cardImg={post.attributes.postImage.data.attributes.formats.thumbnail.url}
             cardPath={'work'}
           />
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
-            cardPath={'work'}
-          />
-          <Card
-            cardTitle={'title'}
-            cardSlug={'#'}
-            cardImg={''}
-            cardPath={'work'}
-          />
+        } ) }
         </Section>
         <Button>
           <Link href="/posts"> View All </Link>
@@ -85,6 +66,13 @@ const Home = () => {
       <Contact delay={0.6} />
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const worksData = await fetchData('works', 'pagination[limit]=3')
+  const postsData = await fetchData('posts', 'pagination[limit]=3')
+
+  return { props: { worksData, postsData } }
 }
 
 export default Home

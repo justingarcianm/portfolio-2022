@@ -2,24 +2,25 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Contact from '../components/Contact'
 import me from '../public/images/me.jpg'
+import Section from '../components/section'
+import { Paragraph, Underline } from '../utils/CustomElements'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
   return (
-    <div>
-      <section className="about-copy">
+    <>
+      <Section delay={0.2} cols={2}>
         <div className="about-header">
-          <div className="about-header-container">
-            <h2>About Justin</h2>
-            <motion.div
-              className="underline"
+          <div style={{position:'relative'}}>
+            <h2 style={{fontSize:'5rem', marginBottom:'1rem', paddingBottom:'.1rem'}} >About Justin</h2>
+            <Underline
               initial={{ width: 0 }}
               animate={{ width: '60%' }}
               transition={{ duration: 1, delay: 0.5 }}
             />
           </div>
           <div className="about-content">
-            <p>
+            <Paragraph>
               I started practicing Web Development in 2018 and I haven&apos;t
               stopped since. I appreciate how much I&apos;ve been rewarded for
               my stubbornness. From tackling the basics to deploying fullstack
@@ -27,12 +28,12 @@ const About = () => {
               solving. I started off a lone wolf but quickly grew to love team
               work and mentoring when I joined a bootcamp in 2019. I live by the
               adage,
-            </p>
-            <blockquote>
+            </Paragraph>
+            <blockquote style={{margin:'1rem 0'}} >
               &ldquo;<strong>Luck</strong> is what happens when preparation
               meets opportunity.&ldquo; &#8211; Seneca
             </blockquote>
-            <p>
+            <Paragraph>
               I am a textbook nerd who plays video games and reads comics in my
               spare time when I need a break from coding. I&apos;m currently
               living in Albuquerque, NM where the tech field is still young but
@@ -40,13 +41,19 @@ const About = () => {
               am to have gone from coding in my spare time to it being my
               career. Thanks for reading! If you think I would be a good fit for
               your team, or just want to get to know me, send me a message.
-            </p>
+            </Paragraph>
           </div>
         </div>
-        <div className="about-image">
-          <Image src={me} alt="Picture of Justin Garcia" />
+        <div style={{maxWidth:'400px', margin:'auto'}}>
+          <Image src={me} alt="Picture of Justin Garcia" 
+          style={{
+            width:'100%',
+            borderRadius:'50%',
+            boxShadow:'var(--box-shadow)',
+          }}
+          />
         </div>
-      </section>
+      </Section>
       {/* <section className="skills">
         <h2>Skills</h2>
         <div className="skills-container">
@@ -85,10 +92,10 @@ const About = () => {
           </div>
         </div>
       </section> */}
-      <section className="contact">
+      <Section delay={.4}>
         <Contact />
-      </section>
-    </div>
+      </Section>
+    </>
   )
 }
 

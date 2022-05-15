@@ -2,6 +2,7 @@ const STRAPI_API_URL =
   process.env.NEXT_PUBLIC_API_PROD_URI || process.env.NEXT_PUBLIC_API_LOCAL_URI
 
 export const fetchData = async (path, params) => {
+
   let response = await fetch(
     `${STRAPI_API_URL}${path}?populate=*&${params || ''}`
   )

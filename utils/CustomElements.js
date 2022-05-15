@@ -41,11 +41,31 @@ export const SectionDiv = styled(motion.section)`
 export const ContactSection = styled(SectionDiv)`
   grid-template-columns: 2fr 1fr;
   gap: 0 4rem;
+  align-items: baseline;
+  overflow:hidden;
 `
 
-export const Listing = styled(SectionDiv)`
-  grid-template-columns: 2fr 1fr;
+export const ContactSubHeading = styled(motion.h2)`
+font-size:5rem;
+color:var(--background-color);
+text-shadow: 0px 0px 0px red;
+`;
+
+export const BGImageWrapper = styled.div`
+width:300px;
+padding:1rem;
+`;
+
+export const ListingDiv = styled(SectionDiv)`
+  grid-template-columns: 1fr 2fr;
 `
+
+export const ListingLinks = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+`;
 
 export const SectionTitle = styled.h3`
   font-size: 2rem;
@@ -180,4 +200,33 @@ export const FooterSocial = styled.div`
   gap: 1rem;
   padding: 1rem;
   cursor: pointer;
-`
+`;
+
+export const CardWrapper = styled.div`
+background-position: center;
+background-size: cover;
+height: 200px;
+width: 350px;
+border-radius: 7px;
+padding: 1.5rem;
+position: relative;
+background-image:url('${props => props.bg || ''}')
+`;
+
+export const CardContent = styled(motion.a)`
+position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: #1a202c70;
+  border-radius: inherit;
+  color: var(--always-light);
+  font-size: 1.3rem;
+  padding:1rem;
+  text-align:center;
+`;

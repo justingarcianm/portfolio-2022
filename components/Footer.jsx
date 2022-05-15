@@ -13,7 +13,7 @@ const Footer = ({ path }) => {
           <NavLink path={path} href="/about">
             About
           </NavLink>
-          <NavLink path={path} href="/work">
+          <NavLink path={path} href="/works">
             Work
           </NavLink>
           <NavLink path={path} href="/posts">

@@ -1,59 +1,62 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
-import { Paragraph } from '../utils/CustomElements'
+import { Paragraph, ListingDiv, Button, ListingLinks } from '../utils/CustomElements'
+import { listingVariant } from '../utils/motionVars'
 
-const Listing = ({ work }) => {
-  const {
-    workTitle,
-    workImage,
-    workSlug,
-    workDescription,
-    repoLink,
-    liveLink
-  } = work
+const Listing = ({  
+  delay,
+  listingTitle,
+  listingImg,
+  listingSlug,
+  listingDescription,
+  repoLink,
+  liveLink,
+  work }) => {
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: '-100vw' }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 1, duration: 1, type: 'spring' }}
-      className="listing-container"
+    <ListingDiv
+      initial='out'
+      animate='in'
+      transition={{ delay: delay || 0, duration: 1.2, type: 'spring' }}
+      variants={listingVariant}
     >
-      <div className="listing-img">
-        <img
-          src={workImage.data.attributes.formats.single.url}
-          alt={workTitle}
+      <div>
+        <Image
+          src={listingImg}
+          alt={listingTitle}
+          width={400}
+          height={200}
+          style={{borderRadius:'var(--border-radius)'}}
         />
       </div>
       <div className="listing-content">
-        <h3>{workTitle}</h3>
-        <div className="listing-description">
-          <Paragraph>{workDescription}</Paragraph>
+        <h3 style={{fontSize:'1.5rem'}}>{listingTitle}</h3>
+        <div style={{margin:'1rem 0'}}>
+          <Paragraph>{listingDescription}</Paragraph>
         </div>
-        <div className="listing-links">
-          <div className="page-link">
-            <button className="link-button">
-              <Link href={`${workSlug}`}>Read More</Link>
-            </button>
+        <ListingLinks>
+          <div>
+            <Button>
+              <Link href={`${listingSlug}`}>Read More</Link>
+            </Button>
           </div>
-          <div className="project-links">
-            <Link href={`${repoLink}`} target="_blank">
-              <motion.span whileHover={{ color: 'var(--accent-color)' }}>
-                {' '}
+          { work && <div>
+            <Link href={`${repoLink}`} passHref>
+              <motion.a target="_blank" whileHover={{ color: 'var(--accent-color)' }} style={{marginRight:'1rem'}} >
                 <FaGithub /> Repo
-              </motion.span>
+              </motion.a>
             </Link>
-            <Link href={`${liveLink}`} target="_blank">
-              {' '}
-              <motion.span whileHover={{ color: 'var(--accent-color)' }}>
+            <Link href={`${liveLink}`} passHref >
+              <motion.a target="_blank" whileHover={{ color: 'var(--accent-color)' }}>
                 <FaLink /> Demo
-              </motion.span>{' '}
+              </motion.a>
             </Link>
-          </div>
-        </div>
+          </div> }
+        </ListingLinks>
       </div>
-    </motion.div>
+    </ListingDiv>
   )
 }
 
