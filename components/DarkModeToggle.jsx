@@ -4,29 +4,29 @@ import { useState, useEffect } from 'react'
 import { ToggleBtn } from '../utils/CustomElements'
 
 const DarkModeToggle = () => {
-
-  const [darkTheme,setDarkTheme] = useState(false)
+  const [darkTheme, setDarkTheme] = useState(false)
 
   const toggleTheme = () => {
     return setDarkTheme(!darkTheme)
   }
 
   useEffect(() => {
-    if( darkTheme) {
-      document.documentElement.setAttribute('data-theme','dark')
+    if (darkTheme) {
+      document.documentElement.setAttribute('data-theme', 'dark')
       window.localStorage.setItem('theme', 'dark')
     } else {
       document.documentElement.removeAttribute('data-theme')
       window.localStorage.setItem('theme', 'light')
     }
-     
-  },[darkTheme])
+  }, [darkTheme])
 
   useEffect(() => {
     const root = window.document.documentElement
-    const initialColorValue = root.style.getPropertyValue('--initial-color-mode')
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    )
     setDarkTheme(initialColorValue === 'dark')
-  },[])
+  }, [])
 
   return (
     <AnimatePresence exitBeforeEnter>

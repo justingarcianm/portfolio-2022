@@ -1,4 +1,4 @@
-const pageVariant = {
+export const pageVariant = {
   out: {
     opacity: 0,
     y: '5vh'
@@ -8,10 +8,24 @@ const pageVariant = {
     y: 0
   }
 }
-const pageTransition = {
+
+export const listingVariant = {
+  out: {
+    opacity: 0, 
+    x: '-100vw'
+  },
+  in: {
+    opacity: 1, 
+    x: 0
+  }
+}
+
+export const pageTransition = {
   duration: 1,
   ease: 'anticipate',
   type: 'tween'
 }
 
-export { pageVariant, pageTransition }
+export const delayAmt = index => .5 + (index * .3 )
+
+

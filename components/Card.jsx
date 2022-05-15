@@ -1,15 +1,14 @@
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-
+import { CardContent, CardWrapper } from '../utils/CustomElements'
 const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
   return (
-    <Link
-      href={`/${cardPath}/${cardSlug}`}
-      className="card"
-      style={{ backgroundImage: `url(${cardImg})` }}
+    <div>
+      <CardWrapper
+      
+      bg={cardImg}
     >
-      <motion.div
-        className="card-content"
+     <Link href={`/${cardPath}/${cardSlug}`} passHref>
+     <CardContent
         initial={{
           opacity: 0
         }}
@@ -18,8 +17,10 @@ const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
         }}
       >
         <h3>{cardTitle}</h3>
-      </motion.div>
-    </Link>
+      </CardContent>
+     </Link>
+    </CardWrapper>
+    </div>
   )
 }
 

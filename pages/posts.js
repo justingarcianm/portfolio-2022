@@ -1,58 +1,54 @@
-// import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-// import { fetchData } from '../lib/ApiCalls'
-import Listing from '../components/Listing' 
+import { fetchData } from '../utils/frontFetch'
+import { delayAmt } from '../utils/motionVars'
+import Section from '../components/section'
+import Listing from '../components/listing'
+import { SectionTitle, Underline } from '../utils/CustomElements'
 
-const Posts = () => {
-
-  // const [ posts, setPosts ] = useState([])
-  // // const [ categories, setCategories ] = useState([])
-  // const [loaded, setLoaded] = useState(false)
-
-  // useEffect(() => {
-  //   fetchData('posts').then( data => setPosts(data) )
-  //   setLoaded(true)
-  //   // let catTitles = posts.map( post => post.attributes.categories )
-  //   // 
-  // },[])
-
+const Posts = ({ postsData, catTitles }) => {
+  // const usedCategories = catTitles.filter( (cat,index) => cat.attributes.catLabel.find(postsData[index].attributes.catTitle.data.attributes.catLabel) )
+  console.log(postsData)
+  console.log(catTitles)
   return (
-    <div>
-      <div className="post-header">
-        <h2>Posts</h2>
-      </div>
+    <>
+      <Section delay={.2}>
+        <SectionTitle>Posts</SectionTitle>
+      </Section>
 
-      <div className='post-categories'>
-        <div className='cat-titles'>
-        <h3>Categories</h3>
-        <motion.div 
-        className='underline' 
-        initial={{ width: 0 }}
-        animate={{ width: '60%' }}
-        transition={{ duration: 1, delay: 0.5 }}
-        style={{margin:'auto'}}
-        />
+      <Section delay={.4}>
+        <div style={{position:'relative', maxWidth:'fit-content', margin:'auto'}}>
+          <SectionTitle>Categories</SectionTitle>
+            <Underline 
+            style={{margin:'0 auto'}}
+            initial={{width:0}}
+            animate={{width:'60%'}}
+            transition={{ delay:.3, duration:1.2 }}
+          />
         </div>
-        <div className='cat-container'>
+        <div className="cat-container"></div>
+      </Section>
 
-        </div>
-      </div>
-
-      <div className="post-list">
-        {/* { loaded &&
-        posts.map( post => <Listing 
+      <Section delay={.6}>
+        { postsData.map( post => <Listing 
           key={post.key}
-          postTitle={post.attributes.postTitle}
-          postImg={
-                  post.attributes.workImage.data.attributes.formats.large.url
+          listingTitle={post.attributes.postTitle}
+          listingImg={
+                  post.attributes.postImage.data.attributes.formats.thumbnail.url
                 }
-          postSlug={post.attributes.workSlug}
-          postPath="post"
+          listingDescription={post.attributes.postDescription}      
+          listingSlug={post.attributes.postSlug}
+          work={false}
+          delay={delayAmt(post.key + 4)}
           />)
-        } */}
-      </div>
-    </div>
+        }
+      </Section>
+    </>
   )
+}
+
+export async function getServerSideProps() {
+  const postsData = await fetchData('posts')
+  const catTitles = await fetchData('categories')
+  return { props: { postsData, catTitles } }
 }
 
 export default Posts
