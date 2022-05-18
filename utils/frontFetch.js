@@ -18,6 +18,5 @@ export const sendData = async data => {
     },
     body: JSON.stringify(data)
   })
-  console.log(response.ok)
   return await response
 }

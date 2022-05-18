@@ -29,7 +29,7 @@ const Posts = ({ postsData, catTitles }) => {
 
       <Section delay={.6}>
         { postsData.map( post => <Listing 
-          key={post.key}
+          key={post.id}
           listingTitle={post.attributes.postTitle}
           listingImg={
                   post.attributes.postImage.data.attributes.formats.thumbnail.url
@@ -37,7 +37,7 @@ const Posts = ({ postsData, catTitles }) => {
           listingDescription={post.attributes.postDescription}      
           listingSlug={post.attributes.postSlug}
           work={false}
-          delay={delayAmt(post.key + 4)}
+          delay={delayAmt(post.id + .2)}
           />)
         }
       </Section>

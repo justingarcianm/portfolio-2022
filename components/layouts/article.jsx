@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { PostContainer } from '../../utils/CustomElements'
 
 export default function Layout({ children, title, description, img, }) {
   return (
@@ -18,7 +17,7 @@ export default function Layout({ children, title, description, img, }) {
         <meta property="og:image" content={img} />
         <title> {`${title} | `} Justin Garcia</title>
       </Head>
-      <PostContainer>{children}</PostContainer>
+      {children}
     </>
   )
 }

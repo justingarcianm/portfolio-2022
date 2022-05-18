@@ -39,7 +39,7 @@ const Listing = ({
         <ListingLinks>
           <div>
             <Button>
-              <Link href={`${listingSlug}`}>Read More</Link>
+              <Link href={ work ? `/work/${listingSlug}`: `/posts/${listingSlug}` }>Read More</Link>
             </Button>
           </div>
           { work && <div>

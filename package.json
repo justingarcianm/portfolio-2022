@@ -5,11 +5,14 @@
   "author": "Justin Garcia",
   "dependencies": {
     "framer-motion": "^6.3.3",
+    "moment": "^2.29.3",
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.3",
     "react-moment": "^1.1.2",
+    "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
