@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import Contact from '../components/Contact'
+import Contact from '../components/Contact/contact'
 import me from '../public/images/me.jpg'
 import Section from '../components/section'
-import { Paragraph, Underline } from '../utils/CustomElements'
+import { UnderLine } from './styles/Index.css'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
@@ -13,14 +12,14 @@ const About = () => {
         <div className="about-header">
           <div style={{position:'relative'}}>
             <h2 style={{fontSize:'5rem', marginBottom:'1rem', paddingBottom:'.1rem'}} >About Justin</h2>
-            <Underline
+            <UnderLine
               initial={{ width: 0 }}
               animate={{ width: '60%' }}
               transition={{ duration: 1, delay: 0.5 }}
             />
           </div>
           <div className="about-content">
-            <Paragraph>
+            <p>
               I started practicing Web Development in 2018 and I haven&apos;t
               stopped since. I appreciate how much I&apos;ve been rewarded for
               my stubbornness. From tackling the basics to deploying fullstack
@@ -28,12 +27,12 @@ const About = () => {
               solving. I started off a lone wolf but quickly grew to love team
               work and mentoring when I joined a bootcamp in 2019. I live by the
               adage,
-            </Paragraph>
+            </p>
             <blockquote style={{margin:'1rem 0'}} >
               &ldquo;<strong>Luck</strong> is what happens when preparation
               meets opportunity.&ldquo; &#8211; Seneca
             </blockquote>
-            <Paragraph>
+            <p>
               I am a textbook nerd who plays video games and reads comics in my
               spare time when I need a break from coding. I&apos;m currently
               living in Albuquerque, NM where the tech field is still young but
@@ -41,13 +40,12 @@ const About = () => {
               am to have gone from coding in my spare time to it being my
               career. Thanks for reading! If you think I would be a good fit for
               your team, or just want to get to know me, send me a message.
-            </Paragraph>
+            </p>
           </div>
         </div>
         <div style={{maxWidth:'400px', margin:'auto'}}>
           <Image src={me} alt="Picture of Justin Garcia" 
           style={{
-            width:'100%',
             borderRadius:'50%',
             boxShadow:'var(--box-shadow)',
           }}

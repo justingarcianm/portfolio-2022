@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import NavLink from './navLink'
-import { FooterContainer, FooterSocial } from '../utils/CustomElements'
+import NavLink from '../Nav/navLink'
+import { FooterContainer, FooterSocial } from './Footer.css'
+import { HeaderLink } from '../Nav/Nav.css'
 
 const Footer = ({ path }) => {
   return (
@@ -21,24 +22,22 @@ const Footer = ({ path }) => {
           </NavLink>
         </div>
         <FooterSocial>
-          <Link
+
+            <HeaderLink
             href="https://github.com/justingarcianm/Portfolio-2022"
             target="_blank"
             rel="noreferrer"
-          >
-            <motion.span whileHover={{ color: 'var(--accent-color)' }}>
+            >
               <FaGithub />
-            </motion.span>
-          </Link>
-          <Link
+            </HeaderLink>
+
+            <HeaderLink
             href="https://github.com/justingarcianm/Portfolio-2022"
             target="_blank"
             rel="noreferrer"
-          >
-            <motion.span whileHover={{ color: 'var(--accent-color)' }}>
+            >
               <FaLinkedinIn />
-            </motion.span>
-          </Link>
+            </HeaderLink>
         </FooterSocial>
       </div>
     </FooterContainer>

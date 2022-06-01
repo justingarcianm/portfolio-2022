@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CardContent, CardWrapper } from '../utils/CustomElements'
+import { CardContent, CardWrapper } from './Card.css'
 const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
   return (
     <div>

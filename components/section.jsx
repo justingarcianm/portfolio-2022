@@ -1,5 +1,5 @@
 import { pageVariant } from '../utils/motionVars'
-import { SectionDiv } from '../utils/CustomElements'
+import { SectionDiv } from '../theme/global.css'
 
 const Section = ({ delay, children, cols }) => {
   return (

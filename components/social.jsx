@@ -4,7 +4,6 @@ import { SocialWrapper, SocialLink } from '../utils/CustomElements'
 
 const Social = ({link}) => {
   return <SocialWrapper>
-    <h4> Spread the News: </h4>
     <SocialLink
      href='#' 
      bg='#4267B2'

@@ -1,12 +1,14 @@
 import { FaMoon, FaSun } from 'react-icons/fa'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { ToggleBtn } from '../utils/CustomElements'
+import { ToggleBtn } from './Nav.css'
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({themeToggler}) => {
   const [darkTheme, setDarkTheme] = useState(false)
 
   const toggleTheme = () => {
+    let color = darkTheme ? 'dark' : 'light'
+    themeToggler(color)
     return setDarkTheme(!darkTheme)
   }
 
@@ -14,9 +16,11 @@ const DarkModeToggle = () => {
     if (darkTheme) {
       document.documentElement.setAttribute('data-theme', 'dark')
       window.localStorage.setItem('theme', 'dark')
+      themeToggler('dark')
     } else {
       document.documentElement.removeAttribute('data-theme')
       window.localStorage.setItem('theme', 'light')
+      themeToggler('light')
     }
   }, [darkTheme])
 

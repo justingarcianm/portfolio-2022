@@ -2,8 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
-import { Paragraph, ListingDiv, Button, ListingLinks } from '../utils/CustomElements'
-import { listingVariant } from '../utils/motionVars'
+import { LinkButton } from '../../theme/global.css'
+import { ListingLinks, ListingDiv } from './Listing.css'
+import { listingVariant } from '../../utils/motionVars'
 
 const Listing = ({  
   delay,
@@ -28,31 +29,27 @@ const Listing = ({
           alt={listingTitle}
           width={400}
           height={200}
-          style={{borderRadius:'var(--border-radius)'}}
+          style={{borderRadius:'var(--border-radius)', boxShadow:'var(--box-shadow)'}}
         />
       </div>
       <div className="listing-content">
         <h3 style={{fontSize:'1.5rem'}}>{listingTitle}</h3>
         <div style={{margin:'1rem 0'}}>
-          <Paragraph>{listingDescription}</Paragraph>
+          <p>{listingDescription}</p>
         </div>
         <ListingLinks>
           <div>
-            <Button>
-              <Link href={ work ? `/work/${listingSlug}`: `/posts/${listingSlug}` }>Read More</Link>
-            </Button>
+            <LinkButton href={ work ? `/work/${listingSlug}`: `/posts/${listingSlug}` } >
+            Read More
+            </LinkButton>
           </div>
           { work && <div>
-            <Link href={`${repoLink}`} passHref>
-              <motion.a target="_blank" whileHover={{ color: 'var(--accent-color)' }} style={{marginRight:'1rem'}} >
+            <motion.a href={`${repoLink}`} target="_blank" style={{marginRight:'1rem'}} >
                 <FaGithub /> Repo
-              </motion.a>
-            </Link>
-            <Link href={`${liveLink}`} passHref >
-              <motion.a target="_blank" whileHover={{ color: 'var(--accent-color)' }}>
+            </motion.a>
+            <motion.a href={`${liveLink}`} target="_blank" >
                 <FaLink /> Demo
-              </motion.a>
-            </Link>
+            </motion.a>
           </div> }
         </ListingLinks>
       </div>

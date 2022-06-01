@@ -4,7 +4,7 @@ const STRAPI_API_URL =
 export const fetchData = async (path, params) => {
 
   let response = await fetch(
-    `${STRAPI_API_URL}${path}?populate=*&${params || ''}`
+    `${STRAPI_API_URL}${path}${params || '?populate=*'}`
   )
   let result = await response.json()
   return result.data
