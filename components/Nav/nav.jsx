@@ -51,7 +51,7 @@ const Nav = props => {
                 <StackedBtn onClick={toggleMenu}>
                   <CgMenu />
                 </StackedBtn>
-                <MenuLinks display={display.toString()}>
+                { display && <MenuLinks display={display.toString()}>
                   <Link path={path} href="/about">
                     About
                   </Link>
@@ -68,7 +68,7 @@ const Nav = props => {
                     >
                       <FaGithub /> Source
                     </HeaderLink>
-                </MenuLinks>
+                </MenuLinks> }
               </div>
             </Stacked>
           </NavLinksWrapper>

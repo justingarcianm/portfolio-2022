@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { motion } from "framer-motion";
 import { size } from "../../theme/global.css"
 
+import { PostHeading } from "../../components/Post/Post.css";
+
 export const HomeTitle = styled.h1`
     font-size: clamp( 3rem, 2.5rem + 10vw, 6rem );
     line-height: clamp( 4rem, 3.5rem + 6vw, 7rem );
@@ -57,4 +59,41 @@ export const CategoryContainer = styled.div`
         color:var(--light);
     }
   }
+`;
+
+export const WorkHeading = styled(PostHeading)`
+
+
+    & span {
+      background-color:${props => props.theme.body};
+      padding:.5rem 1rem;
+      border-radius:20px;
+      color:${props => props.theme.color};
+      box-shadow:var(--box-shadow);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      transition: 300ms all ease;
+
+      &:hover {
+        box-shadow:var(--box-shadow-hover);
+      }
+    }
+`;
+
+export const WorkLinks = styled.div`
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:2rem;
+`;
+
+export const WorkContent = styled.div`
+
+& img {
+  max-width:100%;
+  border-radius:20px;
+}
 `;

@@ -19,7 +19,6 @@ export default function App({ Component, pageProps, router }) {
 
   useEffect(() => {
     let darkTheme = document.documentElement.getAttribute('data-theme') || 'light'
-    console.log(darkTheme)
     setTheme(darkTheme)
   }, [])
   return (
