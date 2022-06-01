@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa'
 import { CgMenu } from 'react-icons/cg'
 import DarkModeToggle from './darkModeToggle'
 import NavLink from './navLink'
 import {
+  HeaderLink, 
+  Logo,
   NavBar,
   NavWrapper,
   Fixed,
@@ -13,7 +14,8 @@ import {
   Stacked,
   StackedBtn,
   MenuLinks
-} from '../utils/CustomElements'
+} from './Nav.css'
+
 const Nav = props => {
   const { path } = props
   const [display, setDisplay] = useState(false)
@@ -23,9 +25,7 @@ const Nav = props => {
     <NavBar>
       <Fixed>
         <NavWrapper>
-          <h1>
-            <Link href="/">Justin Garcia</Link>
-          </h1>
+            <Logo href="/">Justin Garcia</Logo>
           <NavLinksWrapper>
             <div className="site-links">
               <NavLink path={path} href="/about">
@@ -37,26 +37,21 @@ const Nav = props => {
               <NavLink path={path} href="/posts">
                 Posts
               </NavLink>
-              <Link
+                <HeaderLink
                 href="https://github.com/justingarcianm/Portfolio-2022"
                 target="_blank"
                 rel="noreferrer"
-              >
-                <motion.span
-                  initial={{ color: 'var(--font-color)' }}
-                  whileHover={{ color: 'var(--accent-color)' }}
                 >
-                  <FaGithub /> Source
-                </motion.span>
-              </Link>
+                      <FaGithub /> Source
+                    </HeaderLink>
             </div>
             <Stacked>
-              <DarkModeToggle />
+              <DarkModeToggle themeToggler={props.themeToggler} />
               <div className="stacked-menu">
                 <StackedBtn onClick={toggleMenu}>
                   <CgMenu />
                 </StackedBtn>
-                <MenuLinks display={display}>
+                <MenuLinks display={display.toString()}>
                   <Link path={path} href="/about">
                     About
                   </Link>
@@ -66,19 +61,13 @@ const Nav = props => {
                   <Link path={path} href="/posts">
                     Posts
                   </Link>
-                  <Link
-                    href="https://github.com/justingarcianm/Portfolio-2022"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <motion.span
-                      initial={{ color: 'var(--font-color)' }}
-                      whileHover={{ color: 'var(--accent-color)' }}
-                      style={{ cursor: 'pointer' }}
+                    <HeaderLink
+                     href="https://github.com/justingarcianm/Portfolio-2022"
+                     target="_blank"
+                     rel="noreferrer"
                     >
                       <FaGithub /> Source
-                    </motion.span>
-                  </Link>
+                    </HeaderLink>
                 </MenuLinks>
               </div>
             </Stacked>

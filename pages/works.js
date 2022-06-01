@@ -1,15 +1,12 @@
 import { fetchData } from '../utils/frontFetch'
 import { delayAmt } from '../utils/motionVars'
 import Section from '../components/section'
-import Listing from '../components/listing'
-import { SectionTitle } from '../utils/CustomElements'
+import Listing from '../components/Listing/listing'
 
 const Work = ({ worksData }) => {
   return (
     <Section delay={.2}>
-      <div className="work-header">
-        <SectionTitle>My Work</SectionTitle>
-      </div>
+        <h1 style={{textAlign:"center"}} >My Work</h1>
       <Section delay={.4} >
           {worksData.map(work => (
               <Listing

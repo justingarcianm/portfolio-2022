@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { Container } from '../../utils/CustomElements'
-import Nav from '../nav'
-import Footer from '../footer'
+import { Container } from '../../theme/global.css'
+import Nav from '../Nav/nav'
+import Footer from '../Footer/footer'
 
-export default function Layout({ children, router }) {
+export default function Layout({ children, router, themeToggler }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Layout({ children, router }) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/me.jpg" />
       </Head>
-      <Nav path={router.asPath} />
+      <Nav path={router.asPath} themeToggler={themeToggler} />
       <Container>{children}</Container>
       <Footer path={router.asPath} />
     </>

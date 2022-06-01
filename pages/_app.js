@@ -1,17 +1,32 @@
+import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
-import '../styles/global.css'
+import { ThemeProvider } from 'styled-components'
+import { lightTheme, darkTheme, GlobalStyles, Global } from '../theme/theme'
 
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual'
 }
 
 export default function App({ Component, pageProps, router }) {
+
+  const [ theme, setTheme ] = useState('')
+
+  const themeToggler = (themeColor) => {
+    return setTheme(themeColor)
+  }
+
+  useEffect(() => {
+    let darkTheme = document.documentElement.getAttribute('data-theme') || 'light'
+    console.log(darkTheme)
+    setTheme(darkTheme)
+  }, [])
   return (
-    <>
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <Fonts />
-      <Layout router={router}>
+      <GlobalStyles/>
+      <Layout router={router} themeToggler={themeToggler} >
         <AnimatePresence
           exitBeforeEnter
           initial={true}
@@ -24,6 +39,6 @@ export default function App({ Component, pageProps, router }) {
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </Layout>
-    </>
+    </ThemeProvider>
   )
 }

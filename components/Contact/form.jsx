@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { Input } from './Contact.css'
+import { sendData } from '../../utils/frontFetch'
+import { LinkButton } from '../../theme/global.css'
 import { motion } from 'framer-motion'
-import { Input, Button } from '../utils/CustomElements'
-import { sendData } from '../utils/frontFetch'
 
 const ContactForm = () => {
   const API_URL =
@@ -40,48 +41,38 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       style={{ borderRadius: '--border-radius', padding: '2rem' }}
     >
-      <div style={{ marginBottom: '1rem' }}>
         <Input
           type="text"
           id="name"
           required
           placeholder="Name"
-          whileFocus={{ borderColor: 'var(--accent-color)' }}
-          transition={{ duration: 0.5 }}
         />
-      </div>
-      <div style={{ marginBottom: '1rem' }}>
         <Input
           type="email"
           id="email"
           required
           placeholder="Email"
-          whileFocus={{ borderColor: 'var(--accent-color)' }}
-          transition={{ duration: 0.5 }}
         />
-      </div>
 
-      <div style={{ marginBottom: '1rem' }}>
         <Input
           as="textarea"
           id="message"
           rows="5"
           required
           placeholder="Your Message"
-          whileFocus={{ borderColor: 'var(--accent-color)' }}
-          transition={{ duration: 0.5 }}
         />
-      </div>
 
-      <Button
+      <LinkButton
         type="submit"
-        as={motion.button}
+        as={motion.motion}
+        initial={{boxShadow:'var(--box-shadow)'}}
+        whileHover={{boxShadow:'var(--box-shadow-hover)'}}
+        transition={{duration:.3, ease:'easeInOut' }}
+        style={{margin:0}}
         disabled={disabled}
-        whileHover={{ scaleY: 1.1 }}
-        transition={{ type: 'spring', stiffness: 100 }}
       >
         {btnText}
-      </Button>
+      </LinkButton>
       <p>{status}</p>
     </form>
   )
