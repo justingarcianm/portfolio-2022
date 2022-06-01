@@ -1,46 +1,71 @@
-import Image from 'next/image'
-import Moment from 'react-moment'
-import ReactMarkdown from 'react-markdown'
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import { motion } from 'framer-motion'
 
-import ArticleLayout from '../../components/layouts/article'
 import Section from '../../components/section'
-import SideBar from '../../components/sidebar'
-import Nav from '../../components/nav'
-import Footer from '../../components/footer'
+import Social from '../../components/Post/social'
+import RelatedPosts from '../../components/Post/relatedPosts'
+import PostHeader from '../../components/Post/PostHeader'
+import PostContent from '../../components/Post/PostContent'
 
-import { PostHeader, ImageWrapper, MDContainer, AuthorMeta, PostContent } from '../../utils/CustomElements'
 import { fetchData } from '../../utils/frontFetch'
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-const PostSingle = ({ post }) => {
-  const categories = post.attributes.catTitle.data.map((cat,idx) => <span key={idx} className='label'>{cat.attributes.catLabel}</span>)
+const PostSingle = ({ post, fullPath }) => {
+  const [ categories, setCategories ] = useState([])
+  useEffect(() => {
 
-  return <ArticleLayout 
-  title={post.attributes.postTitle} 
-  description={post.attributes.postDescription} 
-  img={post.attributes.postImage.data.attributes.formats.thumbnail.url} >
+    let allCats = post.attributes.catTitle.data.map( cat => cat.attributes.catLabel ).reduce( (a,b) => a.concat(b), [] )
+    setCategories(allCats)
+
+  },[])
+  return <> 
+  <Head>
+  <meta name="description" content={post.attributes.description} />
+        <link rel="icon" href='/favicons/favicon.ico' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Justin's Portfolio Site" />
+        <meta name="author" content="Justin Garcia" />
+        <meta name="author" content="codingjustin" />
+        <link rel="apple-touch-icon" href='/favicons/apple-touch-icon.png' />
+        <meta property="og:site_name" content="Justin Garcia" />
+        <meta name="og:title" content="Justin Garcia" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={post.attributes.postImage.data.attributes.formats.thumbnail.url} />
+        <title> {`${post.attributes.postTitle} | `} Justin Garcia</title>
+  </Head>
       <Section delay={.2}>
-        Post Header
+        <PostHeader 
+        title={post.attributes.postTitle} 
+        time={post.attributes.createdAt} 
+        authorName={post.attributes.author.data.attributes.name} 
+        authorImage={post.attributes.author.data.attributes.authorImg.data.attributes.formats.thumbnail.url} 
+        categories={categories} 
+        postImage={post.attributes.postImage.data.attributes.url} 
+        />
       </Section>
       <Section delay={.4}>
-        Post Content
+        <PostContent content={post.attributes.postContent} />
       </Section>
-      <Section delay={.6} >
-        Social
+
+      <hr />
+
+      <Section delay={.6}>
+        <Social link={fullPath} />
       </Section>
       <Section delay={.8} >
-        Related Posts Based off of Category
+        {/* <RelatedPosts categories={categories} slug={post.attributes.postSlug} /> */}
       </Section>
-  </ArticleLayout>
+  </>
 }
 
 
 export async function getServerSideProps(context) {
 
+  const fullPath = `${context.req.headers.referer}/${context.query.slug}`
+
   const post = await fetchData(`posts/${context.query.slug}`)
 
-  return { props: { post } }
+  return { props: { post, fullPath } }
 }
 
 export default PostSingle

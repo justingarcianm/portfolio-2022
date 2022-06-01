@@ -1,11 +1,19 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaLink,  } from 'react-icons/fa'
 import { MdMail } from 'react-icons/md'
-import { SocialWrapper, SocialLink } from '../utils/CustomElements'
+import { SocialWrapper, SocialLink } from './Post.css'
 
-const Social = ({link}) => {
+const Social = ({ link }) => {
+
+  const copyLink = e => {
+    e.preventDefault()
+    navigator.clipboard.writeText(`${link}`)
+    alert( 'link copied!' )
+  }
+
   return <SocialWrapper>
     <SocialLink
-     href='#' 
+     href={`https://www.facebook.com/sharer/sharer.php?u=${link}`} 
+     target="_blank"
      bg='#4267B2'
      whileHover={{
       scale:1.2
@@ -14,7 +22,8 @@ const Social = ({link}) => {
         <FaFacebookF/>
     </SocialLink>
     <SocialLink
-     href='#' 
+     href={`https://twitter.com/intent/tweet?text=${link}`} 
+     target="_blank"
      bg='#1DA1F2'
      whileHover={{
       scale:1.2
@@ -23,7 +32,8 @@ const Social = ({link}) => {
         <FaTwitter/>
     </SocialLink>
     <SocialLink
-     href='#' 
+     href={`https://www.linkedin.com/shareArticle?mini=true&url=${link}`} 
+     target="_blank"
      bg='#0072b1'
      whileHover={{
       scale:1.2
@@ -32,16 +42,19 @@ const Social = ({link}) => {
         <FaLinkedinIn/>
     </SocialLink>
     <SocialLink
-     href='#' 
+     href={`${link}`} 
+     target="_blank"
      bg='#1d1d1d'
      whileHover={{
       scale:1.2
     }}
+    onClick={e => copyLink(e)}
      >
         <FaLink/>
     </SocialLink>
     <SocialLink
-     href='#' 
+     href={`mailto:?body=${link}`} 
+     target="_blank"
      bg='#c71610'
      whileHover={{
        scale:1.2
