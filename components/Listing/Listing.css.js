@@ -6,8 +6,8 @@ export const ListingDiv = styled(SectionDiv)`
 `
 
 export const ListingLinks = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-`;
+`

@@ -1,11 +1,13 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 import notFoundImage from '../public/images/undraw_taken_night.svg'
 
 const NotFound = () => {
   return (
     <div>
       <div className="notFound-container">
-        <img src={notFoundImage} alt="not found" />
+        <Image src={notFoundImage} alt="not found" layout='fill' />
         <div className="notFound-copy">
           <h2>Seems like this page is missing...</h2>
           <p>

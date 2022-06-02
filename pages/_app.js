@@ -10,22 +10,22 @@ if (typeof window !== 'undefined') {
 }
 
 export default function App({ Component, pageProps, router }) {
+  const [theme, setTheme] = useState('')
 
-  const [ theme, setTheme ] = useState('')
-
-  const themeToggler = (themeColor) => {
+  const themeToggler = themeColor => {
     return setTheme(themeColor)
   }
 
   useEffect(() => {
-    let darkTheme = document.documentElement.getAttribute('data-theme') || 'light'
+    let darkTheme =
+      document.documentElement.getAttribute('data-theme') || 'light'
     setTheme(darkTheme)
   }, [])
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <Fonts />
-      <GlobalStyles/>
-      <Layout router={router} themeToggler={themeToggler} >
+      <GlobalStyles />
+      <Layout router={router} themeToggler={themeToggler}>
         <AnimatePresence
           exitBeforeEnter
           initial={true}

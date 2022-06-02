@@ -5,24 +5,24 @@ import Listing from '../components/Listing/listing'
 
 const Work = ({ worksData }) => {
   return (
-    <Section delay={.2}>
-        <h1 style={{textAlign:"center"}} >My Work</h1>
-      <Section delay={.4} >
-          {worksData.map(work => (
-              <Listing
-                key={work.id}
-                listingTitle={work.attributes.workTitle}
-                listingImg={
-                  work.attributes.workImage.data.attributes.formats.thumbnail.url
-                }
-                listingSlug={work.attributes.workSlug}
-                listingDescription={work.attributes.workDescription}
-                repoLink={work.attributes.repoLink}
-                liveLink={work.attributes.liveLink}
-                work={true}
-                delay={delayAmt(work.id)}
-              />
-            ))}
+    <Section delay={0.2}>
+      <h1 style={{ textAlign: 'center' }}>My Work</h1>
+      <Section delay={0.4}>
+        {worksData.map(work => (
+          <Listing
+            key={work.id}
+            listingTitle={work.attributes.workTitle}
+            listingImg={
+              work.attributes.workImage.data.attributes.formats.thumbnail.url
+            }
+            listingSlug={work.attributes.workSlug}
+            listingDescription={work.attributes.workDescription}
+            repoLink={work.attributes.repoLink}
+            liveLink={work.attributes.liveLink}
+            work={true}
+            delay={delayAmt(work.id)}
+          />
+        ))}
       </Section>
     </Section>
   )

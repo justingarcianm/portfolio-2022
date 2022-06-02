@@ -9,7 +9,7 @@ export const FooterSocial = styled.div`
   gap: 1rem;
   padding: 1rem;
   cursor: pointer;
-`;
+`
 
 export const FooterContainer = styled(Container)`
   display: flex;

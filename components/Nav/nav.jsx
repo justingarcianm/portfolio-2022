@@ -5,7 +5,7 @@ import { CgMenu } from 'react-icons/cg'
 import DarkModeToggle from './darkModeToggle'
 import NavLink from './navLink'
 import {
-  HeaderLink, 
+  HeaderLink,
   Logo,
   NavBar,
   NavWrapper,
@@ -25,7 +25,7 @@ const Nav = props => {
     <NavBar>
       <Fixed>
         <NavWrapper>
-            <Logo href="/">Justin Garcia</Logo>
+          <Logo href="/">Justin Garcia</Logo>
           <NavLinksWrapper>
             <div className="site-links">
               <NavLink path={path} href="/about">
@@ -37,13 +37,13 @@ const Nav = props => {
               <NavLink path={path} href="/posts">
                 Posts
               </NavLink>
-                <HeaderLink
+              <HeaderLink
                 href="https://github.com/justingarcianm/Portfolio-2022"
                 target="_blank"
                 rel="noreferrer"
-                >
-                      <FaGithub /> Source
-                    </HeaderLink>
+              >
+                <FaGithub /> Source
+              </HeaderLink>
             </div>
             <Stacked>
               <DarkModeToggle themeToggler={props.themeToggler} />
@@ -51,24 +51,26 @@ const Nav = props => {
                 <StackedBtn onClick={toggleMenu}>
                   <CgMenu />
                 </StackedBtn>
-                { display && <MenuLinks display={display.toString()}>
-                  <Link path={path} href="/about">
-                    About
-                  </Link>
-                  <Link path={path} href="/works">
-                    Work
-                  </Link>
-                  <Link path={path} href="/posts">
-                    Posts
-                  </Link>
+                {display && (
+                  <MenuLinks display={display.toString()}>
+                    <Link path={path} href="/about">
+                      About
+                    </Link>
+                    <Link path={path} href="/works">
+                      Work
+                    </Link>
+                    <Link path={path} href="/posts">
+                      Posts
+                    </Link>
                     <HeaderLink
-                     href="https://github.com/justingarcianm/Portfolio-2022"
-                     target="_blank"
-                     rel="noreferrer"
+                      href="https://github.com/justingarcianm/Portfolio-2022"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FaGithub /> Source
                     </HeaderLink>
-                </MenuLinks> }
+                  </MenuLinks>
+                )}
               </div>
             </Stacked>
           </NavLinksWrapper>
