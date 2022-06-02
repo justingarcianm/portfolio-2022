@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { ToggleBtn } from './Nav.css'
 
-const DarkModeToggle = ({themeToggler}) => {
+const DarkModeToggle = ({ themeToggler }) => {
   const [darkTheme, setDarkTheme] = useState(false)
 
   const toggleTheme = () => {
@@ -22,7 +22,7 @@ const DarkModeToggle = ({themeToggler}) => {
       window.localStorage.setItem('theme', 'light')
       themeToggler('light')
     }
-  }, [darkTheme])
+  }, [darkTheme, themeToggler])
 
   useEffect(() => {
     const root = window.document.documentElement

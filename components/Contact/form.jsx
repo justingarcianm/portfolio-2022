@@ -41,34 +41,24 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       style={{ borderRadius: '--border-radius', padding: '2rem' }}
     >
-        <Input
-          type="text"
-          id="name"
-          required
-          placeholder="Name"
-        />
-        <Input
-          type="email"
-          id="email"
-          required
-          placeholder="Email"
-        />
+      <Input type="text" id="name" required placeholder="Name" />
+      <Input type="email" id="email" required placeholder="Email" />
 
-        <Input
-          as="textarea"
-          id="message"
-          rows="5"
-          required
-          placeholder="Your Message"
-        />
+      <Input
+        as="textarea"
+        id="message"
+        rows="5"
+        required
+        placeholder="Your Message"
+      />
 
       <LinkButton
         type="submit"
         as={motion.motion}
-        initial={{boxShadow:'var(--box-shadow)'}}
-        whileHover={{boxShadow:'var(--box-shadow-hover)'}}
-        transition={{duration:.3, ease:'easeInOut' }}
-        style={{margin:0}}
+        initial={{ boxShadow: 'var(--box-shadow)' }}
+        whileHover={{ boxShadow: 'var(--box-shadow-hover)' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        style={{ margin: 0 }}
         disabled={disabled}
       >
         {btnText}

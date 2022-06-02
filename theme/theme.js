@@ -1,27 +1,24 @@
-import {
-    createGlobalStyle
-} from "styled-components";
-
+import { createGlobalStyle } from 'styled-components'
 
 export const darkTheme = {
-    body: 'var(--dark)',
-    color: 'var(--light)',
-    nav: 'var(--nav-dark)',
-    toggle: 'var(--toggle-dark)',
-    accent: 'var(--accent-dark)',
-    link: 'var(--link-dark)'
+  body: 'var(--dark)',
+  color: 'var(--light)',
+  nav: 'var(--nav-dark)',
+  toggle: 'var(--toggle-dark)',
+  accent: 'var(--accent-dark)',
+  link: 'var(--link-dark)'
 }
 
 export const lightTheme = {
-    body: 'var(--light)',
-    color: 'var(--dark)',
-    nav: 'var(--nav-light)',
-    toggle: 'var(--toggle-light)',
-    accent: 'var(--accent-light)',
-    link: 'var(--link-light)'
+  body: 'var(--light)',
+  color: 'var(--dark)',
+  nav: 'var(--nav-light)',
+  toggle: 'var(--toggle-light)',
+  accent: 'var(--accent-light)',
+  link: 'var(--link-light)'
 }
 
-export const GlobalStyles = createGlobalStyle `
+export const GlobalStyles = createGlobalStyle`
 :root {
     --dark:#1a202c;
     --light:#f7fafc;
@@ -94,6 +91,4 @@ blockquote {
     text-align: justify;
 }
 
-`;
-
-
+`

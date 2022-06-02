@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import { SectionDiv } from '../../theme/global.css'
 
 export const ContactSection = styled(SectionDiv)`
-grid-template-columns: 2fr 1fr;
-gap: 0 4rem;
-align-items: baseline;
-overflow:hidden;
+  grid-template-columns: 2fr 1fr;
+  gap: 0 4rem;
+  align-items: baseline;
+  overflow: hidden;
 `
 
 export const Input = styled(motion.input)`
@@ -26,6 +26,6 @@ export const Input = styled(motion.input)`
   margin-bottom: 1rem;
 
   &:focus {
-      border-color: ${props => props.theme.accent} 
+    border-color: ${props => props.theme.accent};
   }
 `

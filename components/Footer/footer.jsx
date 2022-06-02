@@ -22,22 +22,21 @@ const Footer = ({ path }) => {
           </NavLink>
         </div>
         <FooterSocial>
-
-            <HeaderLink
+          <HeaderLink
             href="https://github.com/justingarcianm/Portfolio-2022"
             target="_blank"
             rel="noreferrer"
-            >
-              <FaGithub />
-            </HeaderLink>
+          >
+            <FaGithub />
+          </HeaderLink>
 
-            <HeaderLink
+          <HeaderLink
             href="https://github.com/justingarcianm/Portfolio-2022"
             target="_blank"
             rel="noreferrer"
-            >
-              <FaLinkedinIn />
-            </HeaderLink>
+          >
+            <FaLinkedinIn />
+          </HeaderLink>
         </FooterSocial>
       </div>
     </FooterContainer>

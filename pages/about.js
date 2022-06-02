@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Contact from '../components/Contact/contact'
 import me from '../public/images/me.jpg'
 import Section from '../components/section'
-import { UnderLine } from './styles/Index.css'
+import { UnderLine } from '../styles/Index.css'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
@@ -10,8 +10,16 @@ const About = () => {
     <>
       <Section delay={0.2} cols={2}>
         <div className="about-header">
-          <div style={{position:'relative'}}>
-            <h2 style={{fontSize:'5rem', marginBottom:'1rem', paddingBottom:'.1rem'}} >About Justin</h2>
+          <div style={{ position: 'relative' }}>
+            <h2
+              style={{
+                fontSize: '5rem',
+                marginBottom: '1rem',
+                paddingBottom: '.1rem'
+              }}
+            >
+              About Justin
+            </h2>
             <UnderLine
               initial={{ width: 0 }}
               animate={{ width: '60%' }}
@@ -28,7 +36,7 @@ const About = () => {
               work and mentoring when I joined a bootcamp in 2019. I live by the
               adage,
             </p>
-            <blockquote style={{margin:'1rem 0'}} >
+            <blockquote style={{ margin: '1rem 0' }}>
               &ldquo;<strong>Luck</strong> is what happens when preparation
               meets opportunity.&ldquo; &#8211; Seneca
             </blockquote>
@@ -43,12 +51,14 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div style={{maxWidth:'400px', margin:'auto'}}>
-          <Image src={me} alt="Picture of Justin Garcia" 
-          style={{
-            borderRadius:'50%',
-            boxShadow:'var(--box-shadow)',
-          }}
+        <div style={{ maxWidth: '400px', margin: 'auto' }}>
+          <Image
+            src={me}
+            alt="Picture of Justin Garcia"
+            style={{
+              borderRadius: '50%',
+              boxShadow: 'var(--box-shadow)'
+            }}
           />
         </div>
       </Section>
@@ -90,7 +100,7 @@ const About = () => {
           </div>
         </div>
       </section> */}
-      <Section delay={.4}>
+      <Section delay={0.4}>
         <Contact />
       </Section>
     </>

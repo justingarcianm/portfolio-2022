@@ -1,23 +1,26 @@
-import styled from "styled-components"
-import { motion } from "framer-motion"
-import { size } from "../../theme/global.css";
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { size } from '../../theme/global.css'
 
 export const HeaderLink = styled(motion.a)`
-    color: ${ props => props.active === "true" ? props => props.theme.accent : props => props.theme.color };
-    transition: all ease-in-out 400ms;
-    margin:0 1rem;
-    cursor:pointer;
-    &:hover {
-        color: ${props => props.theme.accent}
-    }
+  color: ${props =>
+    props.active === 'true'
+      ? props => props.theme.accent
+      : props => props.theme.color};
+  transition: all ease-in-out 400ms;
+  margin: 0 1rem;
+  cursor: pointer;
+  &:hover {
+    color: ${props => props.theme.accent};
+  }
 `
 
 export const Logo = styled.a`
-    font-weight: 100;
-    letter-spacing: 0.2rem;
-    font-size: 2.1rem;
-    font-family:'Montserrat', sans-serif;
-`;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+  font-size: 2.1rem;
+  font-family: 'Montserrat', sans-serif;
+`
 
 export const NavBar = styled.nav`
   width: 100%;
@@ -51,10 +54,9 @@ export const NavLinksWrapper = styled.div`
 
   & .site-links {
     @media ${size.medium} {
-        display:none;
-      }
+      display: none;
+    }
   }
-
 `
 
 export const Underline = styled(motion.div)`
@@ -82,10 +84,10 @@ export const StackedBtn = styled.div`
   align-items: center;
   cursor: pointer;
   display: none;
-  position:relative;
+  position: relative;
 
   @media ${size.medium} {
-    display:block;
+    display: block;
   }
 `
 
@@ -97,28 +99,28 @@ export const MenuLinks = styled.div`
   border-radius: 7px;
   background-color: var(--nav-bg);
   position: absolute;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   background-color: ${props => props.theme.body};
   width: 100%;
-  height:fit-content;
+  height: fit-content;
   transform-origin: top right;
   border: 1px solid var(--font-color);
   transform-origin: top right;
-  visibility: ${props => (props.display === "true" ? 'visible' : 'hidden')};
-  opacity: ${props => (props.display === "true" ? 1 : 0)};
-  z-index: ${props => (props.display === "true" ? 2 : -1)};
+  visibility: ${props => (props.display === 'true' ? 'visible' : 'hidden')};
+  opacity: ${props => (props.display === 'true' ? 1 : 0)};
+  z-index: ${props => (props.display === 'true' ? 2 : -1)};
   transition: 500ms ease all;
 
   & a {
-      font-weight:600;
-      font-size:2rem;
+    font-weight: 600;
+    font-size: 2rem;
   }
 `
 
 export const ToggleBtn = styled(motion.div)`
   padding: 0.7rem;
-  background-color: ${ props => props.theme.toggle };
+  background-color: ${props => props.theme.toggle};
   border-radius: 8px;
   color: var(--light);
   cursor: pointer;
