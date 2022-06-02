@@ -6,8 +6,8 @@
 <!-- Design Stack -->
 ### :art: Design Stack
 
-[octopus.do](https://octopus.do/uwwbpfxw56)
-[figma](https://www.figma.com/file/cSgZQVvbEa7kq8qzPPdDNF/Portfolio-2022?node-id=2%3A146)
+* [octopus.do](https://octopus.do/uwwbpfxw56)
+* [figma](https://www.figma.com/file/cSgZQVvbEa7kq8qzPPdDNF/Portfolio-2022?node-id=2%3A146)
 
 <!-- TechStack -->
 ### :space_invader: Tech Stack
