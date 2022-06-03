@@ -3,23 +3,18 @@ import Contact from '../components/Contact/contact'
 import me from '../public/images/me.jpg'
 import Section from '../components/section'
 import { UnderLine } from '../styles/Index.css'
+import { AboutSection } from '../styles/Index.css'
 // import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
 
 const About = () => {
   return (
     <>
-      <Section delay={0.2} cols={2}>
+      <AboutSection delay={0.2}>
         <div className="about-header">
-          <div style={{ position: 'relative' }}>
-            <h2
-              style={{
-                fontSize: '5rem',
-                marginBottom: '1rem',
-                paddingBottom: '.1rem'
-              }}
-            >
+          <div>
+            <h1>
               About Justin
-            </h2>
+            </h1>
             <UnderLine
               initial={{ width: 0 }}
               animate={{ width: '60%' }}
@@ -61,7 +56,7 @@ const About = () => {
             }}
           />
         </div>
-      </Section>
+      </AboutSection>
       {/* <section className="skills">
         <h2>Skills</h2>
         <div className="skills-container">

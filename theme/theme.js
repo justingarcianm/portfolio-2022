@@ -5,7 +5,7 @@ export const darkTheme = {
   color: 'var(--light)',
   nav: 'var(--nav-dark)',
   toggle: 'var(--toggle-dark)',
-  accent: 'var(--accent-dark)',
+  accent: 'var(--accent-light)',
   link: 'var(--link-dark)'
 }
 
@@ -14,21 +14,20 @@ export const lightTheme = {
   color: 'var(--dark)',
   nav: 'var(--nav-light)',
   toggle: 'var(--toggle-light)',
-  accent: 'var(--accent-light)',
-  link: 'var(--link-light)'
+  accent: 'var(--accent-dark)',
+  link: 'var(--toggle-light)'
 }
 
 export const GlobalStyles = createGlobalStyle`
 :root {
     --dark:#1a202c;
     --light:#f7fafc;
-    --accent-dark:#68d391;
-    --accent-light:#9ae6b4;
+    --accent-dark:#68D391;
+    --accent-light:#9AE6B4;
     --toggle-light:#6b46c1;
     --toggle-dark:#f6ad55;
     --nav-light:#f7fafc70;
     --nav-dark:#1a202c70;
-    --link-light: #81e6d9;
     --link-dark: #b2f5ea;
     --box-shadow: 0 1px 5px rgba( 0,0,0, 0.1 ); 
     --box-shadow-hover: 0 2px 6px rgba( 0,0,0, 0.3 ); 
@@ -47,10 +46,19 @@ html {
 body {
     margin:0;
     padding:0;
-    font-family:'Montserrat', sans-serif;
+    font-family:'Inter', sans-serif;
     transition: all 200ms;
     background-color: ${props => props.theme.body};
     color: ${props => props.theme.color};
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family:'Montserrat', sans-serif;
+    margin:.5rem 0;
 }
 
 h1 {
@@ -74,21 +82,23 @@ h4 {
     font-weight:400;
 }
 
-a {
- text-decoration:none;
- color:inherit;
+p {
+    margin-top:0;
 }
 
 p,
-a,
 span,
 li,
 strong,
 blockquote {
-    font-family:'Inter', sans-serif;
     font-size: clamp(1rem,0.9rem + 1vw,1.2rem);
     line-height:clamp(2rem, 1rem + 1vw, 2.2rem);
     text-align: justify;
 }
 
+a {
+    font-size: 1.3rem;
+    text-decoration:none;
+    color:inherit;
+   }
 `

@@ -116,9 +116,12 @@ export const SocialWrapper = styled.div`
   justify-content: flex-start;
   align-items: baseline;
   max-width: 100%;
-  //   border-top: 2px solid ${props => props.theme.accent};
   padding-top: 2rem;
   margin: auto;
+
+  @media ${size.medium} {
+    justify-content:center;
+  }
 `
 
 export const SocialLink = styled(motion.a)`

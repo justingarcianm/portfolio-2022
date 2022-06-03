@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import { motion } from 'framer-motion'
 
 import Section from '../../components/section'
 import Social from '../../components/Post/social'
-import RelatedPosts from '../../components/Post/relatedPosts'
 import PostHeader from '../../components/Post/PostHeader'
 import PostContent from '../../components/Post/PostContent'
 
 import { fetchData } from '../../utils/frontFetch'
+import { HR } from '../../styles/Index.css'
 
 const PostSingle = ({ post, fullPath }) => {
   const [categories, setCategories] = useState([])
@@ -56,13 +55,12 @@ const PostSingle = ({ post, fullPath }) => {
         <PostContent content={post.attributes.postContent} />
       </Section>
 
-      <hr />
+      <HR />
 
       <Section delay={0.6}>
         <Social link={fullPath} />
       </Section>
       <Section delay={0.8}>
-        {/* <RelatedPosts categories={categories} slug={post.attributes.postSlug} /> */}
       </Section>
     </>
   )
