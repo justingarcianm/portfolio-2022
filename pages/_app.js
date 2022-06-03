@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { ThemeProvider } from 'styled-components'
+import TagManager from 'react-gtm-module';
+
 import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
-import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme, GlobalStyles, Global } from '../theme/theme'
 
 if (typeof window !== 'undefined') {
@@ -17,6 +19,7 @@ export default function App({ Component, pageProps, router }) {
   }
 
   useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-T9DKHG6' });
     let darkTheme =
       document.documentElement.getAttribute('data-theme') || 'light'
     setTheme(darkTheme)
