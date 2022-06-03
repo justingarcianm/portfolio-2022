@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
-import { LinkButton } from '../../theme/global.css'
 import { ListingLinks, ListingDiv } from './Listing.css'
 import { listingVariant } from '../../utils/motionVars'
+import PageLink from '../pageLink'
 
 const Listing = ({
   delay,
@@ -36,17 +35,17 @@ const Listing = ({
         />
       </div>
       <div className="listing-content">
-        <h3 style={{ fontSize: '1.5rem' }}>{listingTitle}</h3>
-        <div style={{ margin: '1rem 0' }}>
+        <h3>{listingTitle}</h3>
+        <div>
           <p>{listingDescription}</p>
         </div>
         <ListingLinks>
           <div>
-            <LinkButton
+            <PageLink
               href={work ? `/work/${listingSlug}` : `/posts/${listingSlug}`}
             >
               Read More
-            </LinkButton>
+            </PageLink>
           </div>
           {work && (
             <div>

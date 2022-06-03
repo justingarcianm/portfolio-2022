@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { size } from '../theme/global.css'
-
+import { SectionDiv } from '../theme/global.css'
 import { PostHeading } from '../components/Post/Post.css'
 
 export const HomeTitle = styled.h1`
@@ -24,13 +24,30 @@ export const HomeTitle = styled.h1`
   }
 `
 
+export const AboutSection = styled(SectionDiv)`
+  grid-template-columns: 2fr 1fr;
+  align-items:center;
+  gap:3rem;
+
+  & > div div {
+    position:relative;
+
+    & h1 {
+      font-size:4rem;
+      margin:0.5rem 0;
+    }
+
+  }
+`;
+
 export const UnderLine = styled(motion.div)`
 position: absolute;
 bottom: -1px;
 left: 0;
 right: 0;
 height: 3px;
-background: var(--accent);
+background-color: ${props => props.theme.accent};
+border-radius:20px;
 }
 `
 
@@ -61,7 +78,7 @@ export const CategoryContainer = styled.div`
 `
 
 export const WorkHeading = styled(PostHeading)`
-  & span {
+  & a {
     background-color: ${props => props.theme.body};
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -93,3 +110,6 @@ export const WorkContent = styled.div`
     border-radius: 20px;
   }
 `
+export const HR = styled(motion.hr)`
+  border-top: 2px solid ${props => props.theme.accent}
+`;

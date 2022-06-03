@@ -5,13 +5,14 @@ import { LinkButton } from '../../theme/global.css'
 import { motion } from 'framer-motion'
 
 const ContactForm = () => {
-  const API_URL =
-    process.env.REACT_APP_API_PROD || process.env.REACT_APP_API_LOCAL
+
   const [btnText, setBtnText] = useState('Submit')
   const [disabled, setDisabled] = useState(false)
   const [status, setStatus] = useState('')
+
   const handleSubmit = async e => {
     e.preventDefault()
+    console.log('sent')
     setDisabled(true)
     setBtnText('Sending...')
     const { name, email, message } = e.target.elements
@@ -22,6 +23,7 @@ const ContactForm = () => {
         emailBody: message.value
       }
     }
+    console.log(content)
     try {
       const response = await sendData(content)
       setBtnText('Sent!!')
@@ -39,7 +41,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{ borderRadius: '--border-radius', padding: '2rem' }}
+      style={{ padding: '2rem' }}
     >
       <Input type="text" id="name" required placeholder="Name" />
       <Input type="email" id="email" required placeholder="Email" />
@@ -54,15 +56,14 @@ const ContactForm = () => {
 
       <LinkButton
         type="submit"
-        as={motion.motion}
+        as={motion.input}
         initial={{ boxShadow: 'var(--box-shadow)' }}
         whileHover={{ boxShadow: 'var(--box-shadow-hover)' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         style={{ margin: 0 }}
         disabled={disabled}
-      >
-        {btnText}
-      </LinkButton>
+        value={btnText}
+      />
       <p>{status}</p>
     </form>
   )

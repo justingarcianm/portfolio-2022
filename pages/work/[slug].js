@@ -17,15 +17,15 @@ const WorkSingle = ({ post }) => {
             <h1>{post.attributes.workTitle}</h1>
             <p>{post.attributes.workDescription}</p>
             <WorkLinks>
-              <Link href={post.attributes.repoLink} target="_blank">
-                <span>
+              <Link href={post.attributes.repoLink} passHref >
+                <a target="_blank">
                   <FaGithubSquare /> Repo Link
-                </span>
+                </a>
               </Link>
-              <Link href={post.attributes.liveLink} target="_blank">
-                <span>
+              <Link href={post.attributes.liveLink} passHref>
+                <a target="_blank">
                   <FaLink /> See the Site
-                </span>
+                </a>
               </Link>
             </WorkLinks>
           </div>

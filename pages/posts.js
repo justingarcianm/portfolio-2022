@@ -66,12 +66,12 @@ const Posts = ({ postsData }) => {
       </Section>
 
       <Section delay={0.4}>
-        <h2 style={{ textAlign: 'center' }}>Categories</h2>
+        <h2>Categories</h2>
         <UnderLine
           initial={{ width: 0 }}
           animate={{ width: '10%' }}
           transition={{ delay: 0.5, duration: 1 }}
-          style={{ margin: '0 auto', bottom: '30%' }}
+          style={{ margin: '0 auto', bottom: '20%' }}
         />
       </Section>
       <Section delay={0.4}>

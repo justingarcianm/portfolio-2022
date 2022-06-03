@@ -8,6 +8,15 @@ export const size = {
   small: '(max-width: 600px)'
 }
 
+export const CopyLink = styled.a`
+  color: ${props => props.theme.link};
+  transition: all ease 300ms;
+
+  &:hover {
+    text-decoration:underline;
+  }
+`;
+
 export const Container = styled.div`
   width: -webkit-fill-available;
   max-width: 1280px;
@@ -21,7 +30,7 @@ export const Container = styled.div`
 export const SectionDiv = styled(motion.section)`
   display: grid;
   grid-template-columns: repeat(${props => props.cols || 1}, 1fr);
-  gap: 0 2rem;
+  gap:2rem;
   align-items: center;
   padding: 2rem 0;
   width: inherit;
@@ -35,14 +44,14 @@ export const SectionDiv = styled(motion.section)`
 export const LinkButton = styled(motion.a)`
   all: unset;
   background-color: ${props => props.theme.accent};
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 3rem;
   border-radius: 8px;
   text-align: center;
   color: var(--light);
   cursor: pointer;
-  width: fit-content;
   margin: 0 auto;
   display: block;
+  font-size:1.4rem;
 
   @media ${size.medium} {
     width: -webkit-fill-available;

@@ -9,6 +9,7 @@ const Contact = ({ delay }) => {
       animate="in"
       variants={pageVariant}
       transition={{ delay: delay || 0, duration: 1 }}
+      id="contact"
     >
       <div style={{ position: 'relative' }}>
         <h2 style={{ textAlign: 'left' }}>Let&apos;s Talk</h2>
