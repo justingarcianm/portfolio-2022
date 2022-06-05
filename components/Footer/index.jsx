@@ -8,7 +8,7 @@ import { HeaderLink } from '../Nav/Nav.css'
 const Footer = ({ path }) => {
   return (
     <FooterContainer>
-      <div className="copyright">&copy; Justin Garcia 2022</div>
+      <div className="copyright">Powered by &copy;CodingJustin 2022</div>
       <div className="footer-links-container">
         <div className="footer-links">
           <NavLink path={path} href="/about">

@@ -1,10 +1,17 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { CardContent, CardWrapper } from './Card.css'
 const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
-  return (
-    <div>
-      <CardWrapper bg={cardImg}>
-        <Link href={`/${cardPath}/${cardSlug}`} passHref>
+
+  return <Link href={`${cardPath}/${cardSlug}`}>
+          <CardWrapper>
+          <Image 
+          src={cardImg}
+          alt={cardTitle}
+          layout='fill'
+          objectFit='cover'
+          objectPosition='center'
+          />
           <CardContent
             initial={{
               opacity: 0
@@ -15,10 +22,8 @@ const Card = ({ cardTitle, cardSlug, cardImg, cardPath }) => {
           >
             <h3>{cardTitle}</h3>
           </CardContent>
-        </Link>
-      </CardWrapper>
-    </div>
-  )
+          </CardWrapper>
+          </Link>
 }
 
 export default Card

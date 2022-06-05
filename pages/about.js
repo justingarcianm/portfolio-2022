@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Contact from '../components/Contact/contact'
+import Contact from '../components/Contact/index'
 import me from '../public/images/me.jpg'
 import Section from '../components/section'
 import { UnderLine } from '../styles/Index.css'
@@ -46,7 +46,6 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div style={{ maxWidth: '400px', margin: 'auto' }}>
           <Image
             src={me}
             alt="Picture of Justin Garcia"
@@ -54,8 +53,9 @@ const About = () => {
               borderRadius: '50%',
               boxShadow: 'var(--box-shadow)'
             }}
+            layout='intrinsic'
+            priority
           />
-        </div>
       </AboutSection>
       {/* <section className="skills">
         <h2>Skills</h2>

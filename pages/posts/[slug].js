@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
 import Section from '../../components/section'
 import Social from '../../components/Post/social'
 import PostHeader from '../../components/Post/PostHeader'
-import PostContent from '../../components/Post/PostContent'
+const PostContent = dynamic(() => import('../../components/Post/PostContent'), { suspense: true })
 
 import { fetchData } from '../../utils/frontFetch'
 import { HR } from '../../styles/Index.css'

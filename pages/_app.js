@@ -3,9 +3,8 @@ import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from 'styled-components'
 import TagManager from 'react-gtm-module';
 
-import Layout from '../components/layouts/main'
-import Fonts from '../components/fonts'
-import { lightTheme, darkTheme, GlobalStyles, Global } from '../theme/theme'
+import Layout from '../components/layout'
+import { lightTheme, darkTheme, GlobalStyles } from '../theme/theme'
 
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual'
@@ -26,7 +25,6 @@ export default function App({ Component, pageProps, router }) {
   }, [])
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-      <Fonts />
       <GlobalStyles />
       <Layout router={router} themeToggler={themeToggler}>
         <AnimatePresence

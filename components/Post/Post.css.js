@@ -6,7 +6,6 @@ export const PostHeading = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 50vh;
   background: linear-gradient(
       90deg,
       ${props => props.theme.accent} 50%,
