@@ -1,7 +1,7 @@
 import Section from '../components/section'
 import PageLink from '../components/pageLink'
-import Card from '../components/Card/card'
-import Contact from '../components/Contact/contact'
+import Card from '../components/Card/index'
+import Contact from '../components/Contact/index'
 
 import { fetchData } from '../utils/frontFetch'
 import { HomeTitle } from '../styles/Index.css'
@@ -73,7 +73,6 @@ const Home = ({ worksData, postsData }) => {
 export async function getServerSideProps() {
   const worksData = await fetchData('works', '?pagination[limit]=3&populate=*')
   const postsData = await fetchData('posts', '?pagination[limit]=3&populate=*')
-
   return { props: { worksData, postsData } }
 }
 

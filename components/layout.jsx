@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Container } from '../../theme/global.css'
-import Nav from '../Nav/nav'
-import Footer from '../Footer/footer'
+import { Container } from '../theme/global.css'
+import Nav from './Nav/index'
+import Footer from './Footer/index'
 
 export default function Layout({ children, router, themeToggler }) {
   return (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { fetchData } from '../utils/frontFetch'
 import { delayAmt } from '../utils/motionVars'
 import Section from '../components/section'
-import Listing from '../components/Listing/listing'
+import Listing from '../components/Listing/index'
 import { CategoryContainer, UnderLine } from '../styles/Index.css'
 
 const Posts = ({ postsData }) => {

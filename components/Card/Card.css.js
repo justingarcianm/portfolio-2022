@@ -6,13 +6,18 @@ export const CardWrapper = styled.div`
   background-position: center;
   background-size: cover;
   height: 200px;
+  width:auto;
   border-radius: 7px;
   padding: 1.5rem;
   position: relative;
-  background-image: url('${props => props.bg || ''}');
+  cursor:pointer;
   box-shadow: var(--box-shadow);
   &:hover {
     box-shadow: var(--box-shadow-hover);
+  }
+
+  & img {
+    border-radius: 7px;
   }
 
   @media ${size.medium} {

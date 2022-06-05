@@ -1,7 +1,7 @@
 import { fetchData } from '../utils/frontFetch'
 import { delayAmt } from '../utils/motionVars'
 import Section from '../components/section'
-import Listing from '../components/Listing/listing'
+import Listing from '../components/Listing/index'
 
 const Work = ({ worksData }) => {
   return (

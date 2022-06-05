@@ -31,6 +31,7 @@ export const AboutSection = styled(SectionDiv)`
 
   & > div div {
     position:relative;
+    margin-bottom:1rem;
 
     & h1 {
       font-size:4rem;
@@ -102,6 +103,11 @@ export const WorkLinks = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
+
+  @media ${size.small} {
+    flex-direction:column;
+    align-items: flex-start;
+  }
 `
 
 export const WorkContent = styled.div`
@@ -112,4 +118,13 @@ export const WorkContent = styled.div`
 `
 export const HR = styled(motion.hr)`
   border-top: 2px solid ${props => props.theme.accent}
+`;
+
+export const NotFoundLayout = styled(motion.div)`
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  gap:1rem;
 `;
