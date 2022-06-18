@@ -25,6 +25,10 @@ export const Container = styled.div`
   position: relative;
   transition: all 200ms;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 export const SectionDiv = styled(motion.section)`
