@@ -19,9 +19,13 @@ export default function App({ Component, pageProps, router }) {
 
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-T9DKHG6' });
-    let darkTheme =
-      document.documentElement.getAttribute('data-theme') || 'light'
-    setTheme(darkTheme)
+
+      const root = window.document.documentElement
+      const initialColorValue = root.style.getPropertyValue(
+        '--initial-color-mode'
+      )
+
+    setTheme(initialColorValue)
   }, [])
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>

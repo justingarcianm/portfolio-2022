@@ -31,7 +31,7 @@ const Footer = ({ path }) => {
           </HeaderLink>
 
           <HeaderLink
-            href="https://github.com/justingarcianm/Portfolio-2022"
+            href="https://www.linkedin.com/in/justin-garcia-41706516a/"
             target="_blank"
             rel="noreferrer"
           >
