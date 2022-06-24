@@ -15,17 +15,18 @@ const Home = ({ worksData, postsData }) => {
           Hi, my name is Justin
           <span>Web Developer</span>
         </HomeTitle>
-        <p style={{padding:'0 1rem'}} >
-          Need a problem solver? I am passionate coder and I have the
-          talent to back it up with experience in headless CMS, front-end
-          technologies, and design. I am a natural one man team but I also
-          thrive in collaborative settings. Learn more <CopyLink href="/about">about me</CopyLink> or just get to
-          the <CopyLink href="#projects" >projects</CopyLink>.
+        <p style={{ padding: '0 1rem' }}>
+          Need a problem solver? I am passionate coder and I have the talent to
+          back it up with experience in headless CMS, front-end technologies,
+          and design. I am a natural one man team but I also thrive in
+          collaborative settings. Learn more{' '}
+          <CopyLink href="/about">about me</CopyLink> or just get to the{' '}
+          <CopyLink href="#projects">projects</CopyLink>.
         </p>
       </Section>
 
       <Section delay={0.4}>
-        <h2 id="projects" >My Work</h2>
+        <h2 id="projects">My Work</h2>
         <Section cols={3}>
           {worksData &&
             worksData.map(work => (

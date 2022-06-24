@@ -6,18 +6,18 @@ export const ListingDiv = styled(SectionDiv)`
   grid-template-columns: 1fr 2fr;
 
   & img {
-    border-radius:7px;
+    border-radius: 7px;
     box-shadow: var(--box-shadow);
   }
 
   @media ${size.medium} {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     & img {
-      text-align:center;
+      text-align: center;
     }
   }
 `

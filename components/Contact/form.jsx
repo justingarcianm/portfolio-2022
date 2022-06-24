@@ -5,7 +5,6 @@ import { LinkButton } from '../../theme/global.css'
 import { motion } from 'framer-motion'
 
 const ContactForm = () => {
-
   const [btnText, setBtnText] = useState('Submit')
   const [disabled, setDisabled] = useState(false)
   const [status, setStatus] = useState('')
@@ -39,10 +38,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ padding: '2rem' }}
-    >
+    <form onSubmit={handleSubmit} style={{ padding: '2rem' }}>
       <Input type="text" id="name" required placeholder="Name" />
       <Input type="email" id="email" required placeholder="Email" />
 

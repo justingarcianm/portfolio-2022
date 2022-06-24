@@ -5,7 +5,9 @@ import dynamic from 'next/dynamic'
 import Section from '../../components/section'
 import Social from '../../components/Post/social'
 import PostHeader from '../../components/Post/PostHeader'
-const PostContent = dynamic(() => import('../../components/Post/PostContent'), { suspense: true })
+const PostContent = dynamic(() => import('../../components/Post/PostContent'), {
+  suspense: true
+})
 
 import { fetchData } from '../../utils/frontFetch'
 import { HR } from '../../styles/Index.css'
@@ -61,8 +63,7 @@ const PostSingle = ({ post, fullPath }) => {
       <Section delay={0.6}>
         <Social link={fullPath} />
       </Section>
-      <Section delay={0.8}>
-      </Section>
+      <Section delay={0.8}></Section>
     </>
   )
 }

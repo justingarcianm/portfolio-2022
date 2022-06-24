@@ -12,9 +12,7 @@ const About = () => {
       <AboutSection delay={0.2}>
         <div className="about-header">
           <div>
-            <h1>
-              About Justin
-            </h1>
+            <h1>About Justin</h1>
             <UnderLine
               initial={{ width: 0 }}
               animate={{ width: '60%' }}
@@ -46,16 +44,16 @@ const About = () => {
             </p>
           </div>
         </div>
-          <Image
-            src={me}
-            alt="Picture of Justin Garcia"
-            style={{
-              borderRadius: '50%',
-              boxShadow: 'var(--box-shadow)'
-            }}
-            layout='intrinsic'
-            priority
-          />
+        <Image
+          src={me}
+          alt="Picture of Justin Garcia"
+          style={{
+            borderRadius: '50%',
+            boxShadow: 'var(--box-shadow)'
+          }}
+          layout="intrinsic"
+          priority
+        />
       </AboutSection>
       {/* <section className="skills">
         <h2>Skills</h2>

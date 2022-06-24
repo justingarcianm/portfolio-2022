@@ -119,7 +119,7 @@ export const SocialWrapper = styled.div`
   margin: auto;
 
   @media ${size.medium} {
-    justify-content:center;
+    justify-content: center;
   }
 `
 

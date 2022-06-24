@@ -13,9 +13,9 @@ export const CopyLink = styled.a`
   transition: all ease 300ms;
 
   &:hover {
-    text-decoration:underline;
+    text-decoration: underline;
   }
-`;
+`
 
 export const Container = styled.div`
   width: -webkit-fill-available;
@@ -34,7 +34,7 @@ export const Container = styled.div`
 export const SectionDiv = styled(motion.section)`
   display: grid;
   grid-template-columns: repeat(${props => props.cols || 1}, 1fr);
-  gap:2rem;
+  gap: 2rem;
   align-items: center;
   padding: 2rem 0;
   width: inherit;
@@ -55,7 +55,7 @@ export const LinkButton = styled(motion.a)`
   cursor: pointer;
   margin: 0 auto;
   display: block;
-  font-size:1.4rem;
+  font-size: 1.4rem;
 
   @media ${size.medium} {
     width: -webkit-fill-available;

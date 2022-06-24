@@ -12,11 +12,12 @@ const RelatedPosts = ({ categories, slug }) => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-
     const setData = async cats => {
       // maps categories with api call style
       let queries = cats
-        .map((cat, idx) => `filters[$or][${idx}][catTitle][catLabel][$eq]=${cat}`)
+        .map(
+          (cat, idx) => `filters[$or][${idx}][catTitle][catLabel][$eq]=${cat}`
+        )
         .join('&')
       // Sets limit of 3 posts that are within the categories (organized by date) and excludes the current post
       let concatQueries = `${queries}&filters[$and][${cats.length}][postSlug][$ne]=${slug}&pagination[limit]=3&populate=*`

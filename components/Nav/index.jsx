@@ -46,7 +46,10 @@ const Nav = props => {
               </HeaderLink>
             </div>
             <Stacked>
-              <DarkModeToggle themeToggler={props.themeToggler} />
+              <DarkModeToggle
+                themeToggler={props.themeToggler}
+                theme={props.theme}
+              />
               <div className="stacked-menu">
                 <StackedBtn onClick={toggleMenu}>
                   <CgMenu />

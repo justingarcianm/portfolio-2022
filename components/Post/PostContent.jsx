@@ -28,7 +28,7 @@ const PostContent = ({ content }) => {
           }
         }}
       >
-{content}
+        {content}
       </ReactMarkdown>
     </PostContainer>
   )

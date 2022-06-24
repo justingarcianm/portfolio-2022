@@ -22,12 +22,7 @@ const Listing = ({
       transition={{ delay: delay || 0, duration: 1.2, type: 'spring' }}
       variants={listingVariant}
     >
-        <Image
-          src={listingImg}
-          alt={listingTitle}
-          width={400}
-          height={200}
-        />
+      <Image src={listingImg} alt={listingTitle} width={400} height={200} />
       <div className="listing-content">
         <h3>{listingTitle}</h3>
         <div>

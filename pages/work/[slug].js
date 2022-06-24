@@ -18,7 +18,7 @@ const WorkSingle = ({ post }) => {
             <h1>{post.attributes.workTitle}</h1>
             <p>{post.attributes.workDescription}</p>
             <WorkLinks>
-              <Link href={post.attributes.repoLink} passHref >
+              <Link href={post.attributes.repoLink} passHref>
                 <a target="_blank">
                   <FaGithubSquare /> Repo Link
                 </a>
