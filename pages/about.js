@@ -4,12 +4,18 @@ import me from '../public/images/me.jpg'
 import Section from '../components/section'
 import { UnderLine } from '../styles/Index.css'
 import { AboutSection } from '../styles/Index.css'
-// import { GiJumpAcross, GiRun, GiWalk } from 'react-icons/gi'
+
+import { pageVariant } from '../utils/motionVars'
 
 const About = () => {
   return (
     <>
-      <AboutSection delay={0.2}>
+      <AboutSection
+      initial="out"
+      animate="in"
+      variants={pageVariant}
+      transition={{ delay: 0.2, duration: 1 }}
+      >
         <div className="about-header">
           <div>
             <h1>About Justin</h1>

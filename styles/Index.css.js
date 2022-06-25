@@ -5,18 +5,16 @@ import { SectionDiv } from '../theme/global.css'
 import { PostHeading } from '../components/Post/Post.css'
 
 export const HomeTitle = styled.h1`
-  font-size: clamp(3rem, 2.5rem + 10vw, 6rem);
-  line-height: clamp(4rem, 3.5rem + 6vw, 7rem);
+  line-height: 6rem;
   font-weight: 600;
 
   & span {
     color: ${props => props.theme.accent};
     display: block;
     width: max-content;
-    font-size: 65%;
-    line-height: clamp(3.5rem, 3rem + 3vw, 6rem);
+    font-size: 4rem;
+    line-height: 5rem;
     text-transform: uppercase;
-    padding-top: 1rem;
 
     @media ${size.medium} {
       display: table-cell;

@@ -68,23 +68,23 @@ h5 {
 }
 
 h1 {
-    font-size: clamp( 3rem,2rem + 1vw,4.5rem );
+    font-size: 5rem;
     font-weight:600;
 }
 
 h2 {
-    font-size: clamp( 2.5rem,1.5rem + 1vw,3rem );
+    font-size: 3rem;
     font-weight:400;
     text-align:center;
 }
 
 h3 {
-    font-size: clamp( 2rem,1rem + 1vw,2rem );
+    font-size: 2rem;
     font-weight:300;
 }
 
 h4 {
-    font-size: clamp( 1.2rem,.8rem + 1vw,1.5rem );
+    font-size: 1.5rem;
     font-weight:400;
 }
 
@@ -97,13 +97,13 @@ span,
 li,
 strong,
 blockquote {
-    font-size: clamp(1rem,0.9rem + 1vw,1.2rem);
-    line-height:clamp(2rem, 1rem + 1vw, 2.2rem);
+    font-size: 1rem;
+    line-height:1.8rem;
     text-align: justify;
 }
 
 a {
-    font-size: 1.3rem;
+    font-size: .925rem;
     text-decoration:none;
     color:inherit;
    }
