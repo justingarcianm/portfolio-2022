@@ -50,14 +50,13 @@ export const SectionDiv = styled(motion.section)`
 export const LinkButton = styled(motion.a)`
   all: unset;
   background-color: ${props => props.theme.accent};
-  padding: 0.5rem 3rem;
+  padding: .65rem 3rem;
   border-radius: 8px;
   text-align: center;
   color: var(--light);
   cursor: pointer;
   margin: 0 auto;
   display: block;
-  font-size: 1.4rem;
 
   @media ${size.medium} {
     width: -webkit-fill-available;

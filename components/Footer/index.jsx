@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import NavLink from '../Nav/navLink'
 import { FooterContainer, FooterSocial } from './Footer.css'
@@ -8,7 +6,7 @@ import { HeaderLink } from '../Nav/Nav.css'
 const Footer = ({ path }) => {
   return (
     <FooterContainer>
-      <div className="copyright">Powered by &copy;CodingJustin 2022</div>
+      <div className="copyright">Powered by CodingJustin</div>
       <div className="footer-links-container">
         <div className="footer-links">
           <NavLink path={path} href="/about">

@@ -21,6 +21,10 @@ export const FooterContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
 
+  & .copyright span {
+    color:${props => props.theme.accent}
+  }
+
   @media ${size.small} {
     flex-direction: column;
     gap: 1rem;
