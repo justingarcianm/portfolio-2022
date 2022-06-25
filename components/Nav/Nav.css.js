@@ -32,12 +32,16 @@ export const Fixed = styled.div`
   position: fixed;
   width: inherit;
   max-width: 1280px;
-  z-index: 10;
+  z-index: 1;
   backdrop-filter: blur(5px);
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 1px 5px rgba(0,0,0, .3);
   border-radius: 7px;
   left: 50%;
   transform: translateX(-50%);
+
+  @media ${size.medium} {
+    border-radius: 0px;
+  }
 `
 
 export const NavWrapper = styled.div`
@@ -87,16 +91,14 @@ export const StackedBtn = styled.div`
   position: relative;
 
   @media ${size.medium} {
-    display: block;
+    display: flex;
   }
 `
 
 export const MenuLinks = styled.div`
-  padding: 3rem;
+  margin-top:1rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  border-radius: 7px;
   background-color: var(--nav-bg);
   position: absolute;
   left: 0;
@@ -104,17 +106,15 @@ export const MenuLinks = styled.div`
   background-color: ${props => props.theme.body};
   width: 100%;
   height: fit-content;
-  transform-origin: top right;
-  border: 1px solid var(--font-color);
-  transform-origin: top right;
-  visibility: ${props => (props.display === 'true' ? 'visible' : 'hidden')};
-  opacity: ${props => (props.display === 'true' ? 1 : 0)};
-  z-index: ${props => (props.display === 'true' ? 2 : -1)};
+  overflow:hidden;
+  box-shadow: 0 10px 10px rgba(0,0,0, 0.3);
   transition: 500ms ease all;
+  backdrop-filter: blur(5px);
 
   & a {
     font-weight: 600;
     font-size: 2rem;
+    margin:2rem;
   }
 `
 

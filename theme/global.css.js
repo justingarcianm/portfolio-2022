@@ -42,7 +42,9 @@ export const SectionDiv = styled(motion.section)`
   position: relative;
 
   @media ${size.medium} {
-    display: block;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 `
 export const LinkButton = styled(motion.a)`

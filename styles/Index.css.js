@@ -25,7 +25,7 @@ export const HomeTitle = styled.h1`
 `
 
 export const AboutSection = styled(SectionDiv)`
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   align-items: center;
   gap: 3rem;
 
@@ -36,6 +36,12 @@ export const AboutSection = styled(SectionDiv)`
     & h1 {
       font-size: 4rem;
       margin: 0.5rem 0;
+    }
+  }
+  & img {
+    @media${size.medium} {
+      max-width:300px!important;
+      max-height:300px!important;
     }
   }
 `

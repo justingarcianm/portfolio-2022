@@ -38,7 +38,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ padding: '2rem' }}>
+    <form onSubmit={handleSubmit} style={{ padding: '1rem' }}>
       <Input type="text" id="name" required placeholder="Name" />
       <Input type="email" id="email" required placeholder="Email" />
 

@@ -22,6 +22,7 @@ export const CardWrapper = styled.div`
 
   @media ${size.medium} {
     margin-bottom: 2rem;
+    width: 85vw;
   }
 `
 

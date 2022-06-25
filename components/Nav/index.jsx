@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
-import { CgMenu } from 'react-icons/cg'
+import { CgMenu, CgClose } from 'react-icons/cg'
 import DarkModeToggle from './darkModeToggle'
 import NavLink from './navLink'
 import {
@@ -17,9 +17,17 @@ import {
 } from './Nav.css'
 
 const Nav = props => {
+  const [open,setOpen] = useState(false)
   const { path } = props
-  const [display, setDisplay] = useState(false)
-  const toggleMenu = () => setDisplay(!display)
+
+
+  const toggleMenu = () => {
+    let menuLinks = document.querySelector('.toggle-btn')
+    setOpen(!open)
+    menuLinks.style.maxHeight === '0px' ? 
+    menuLinks.style.maxHeight = `${menuLinks.scrollHeight}px` : 
+    menuLinks.style.maxHeight = '0px'
+  }
 
   return (
     <NavBar>
@@ -52,10 +60,9 @@ const Nav = props => {
               />
               <div className="stacked-menu">
                 <StackedBtn onClick={toggleMenu}>
-                  <CgMenu />
+                  {open ? <CgClose/> : <CgMenu /> }
                 </StackedBtn>
-                {display && (
-                  <MenuLinks display={display.toString()}>
+                <MenuLinks className="toggle-btn" style={{maxHeight:'0px'}}>
                     <Link path={path} href="/about">
                       About
                     </Link>
@@ -73,7 +80,6 @@ const Nav = props => {
                       <FaGithub /> Source
                     </HeaderLink>
                   </MenuLinks>
-                )}
               </div>
             </Stacked>
           </NavLinksWrapper>
