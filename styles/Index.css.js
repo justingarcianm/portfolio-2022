@@ -25,21 +25,26 @@ export const HomeTitle = styled.h1`
 `
 
 export const AboutSection = styled(SectionDiv)`
-  grid-template-columns: 2fr 1fr;
-  align-items:center;
-  gap:3rem;
+  grid-template-columns: 3fr 2fr;
+  align-items: center;
+  gap: 3rem;
 
   & > div div {
-    position:relative;
-    margin-bottom:1rem;
+    position: relative;
+    margin-bottom: 1rem;
 
     & h1 {
-      font-size:4rem;
-      margin:0.5rem 0;
+      font-size: 4rem;
+      margin: 0.5rem 0;
     }
-
   }
-`;
+  & img {
+    @media${size.medium} {
+      max-width:300px!important;
+      max-height:300px!important;
+    }
+  }
+`
 
 export const UnderLine = styled(motion.div)`
 position: absolute;
@@ -105,7 +110,7 @@ export const WorkLinks = styled.div`
   gap: 2rem;
 
   @media ${size.small} {
-    flex-direction:column;
+    flex-direction: column;
     align-items: flex-start;
   }
 `
@@ -117,14 +122,14 @@ export const WorkContent = styled.div`
   }
 `
 export const HR = styled(motion.hr)`
-  border-top: 2px solid ${props => props.theme.accent}
-`;
+  border-top: 2px solid ${props => props.theme.accent};
+`
 
 export const NotFoundLayout = styled(motion.div)`
-  text-align:center;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
-  gap:1rem;
-`;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`

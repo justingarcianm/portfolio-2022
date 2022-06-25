@@ -22,7 +22,7 @@ export const FooterContainer = styled(Container)`
   align-items: center;
 
   @media ${size.small} {
-    flex-direction:column;
-    gap:1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 `

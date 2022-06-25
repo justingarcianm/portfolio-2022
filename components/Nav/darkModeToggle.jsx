@@ -1,36 +1,25 @@
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ToggleBtn } from './Nav.css'
 
-const DarkModeToggle = ({ themeToggler }) => {
-  const [darkTheme, setDarkTheme] = useState(false)
+const DarkModeToggle = ({ themeToggler, theme }) => {
+  const [darkTheme, setDarkTheme] = useState(theme)
 
   const toggleTheme = () => {
-    let color = darkTheme ? 'dark' : 'light'
-    themeToggler(color)
-    return setDarkTheme(!darkTheme)
-  }
+    let themeSetting = !darkTheme
 
-  useEffect(() => {
-    if (darkTheme) {
-      document.documentElement.setAttribute('data-theme', 'dark')
+    if (themeSetting) {
+      document.body.setAttribute('data-theme', 'dark')
       window.localStorage.setItem('theme', 'dark')
-      themeToggler('dark')
     } else {
-      document.documentElement.removeAttribute('data-theme')
+      document.body.removeAttribute('data-theme')
       window.localStorage.setItem('theme', 'light')
-      themeToggler('light')
     }
-  }, [darkTheme, themeToggler])
 
-  useEffect(() => {
-    const root = window.document.documentElement
-    const initialColorValue = root.style.getPropertyValue(
-      '--initial-color-mode'
-    )
-    setDarkTheme(initialColorValue === 'dark')
-  }, [])
+    themeToggler(themeSetting)
+    setDarkTheme(themeSetting)
+  }
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -39,7 +28,6 @@ const DarkModeToggle = ({ themeToggler }) => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="toggle-button"
         onTap={() => toggleTheme()}
         key={darkTheme ? FaSun : FaMoon}
       >

@@ -3,7 +3,7 @@ import { Container } from '../theme/global.css'
 import Nav from './Nav/index'
 import Footer from './Footer/index'
 
-export default function Layout({ children, router, themeToggler }) {
+export default function Layout({ children, router, themeToggler, theme }) {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function Layout({ children, router, themeToggler }) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/me.jpg" />
       </Head>
-      <Nav path={router.asPath} themeToggler={themeToggler} />
+      <Nav path={router.asPath} themeToggler={themeToggler} theme={theme} />
       <Container>{children}</Container>
       <Footer path={router.asPath} />
     </>

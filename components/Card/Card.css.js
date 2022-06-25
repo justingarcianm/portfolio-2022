@@ -6,11 +6,11 @@ export const CardWrapper = styled.div`
   background-position: center;
   background-size: cover;
   height: 200px;
-  width:auto;
+  width: auto;
   border-radius: 7px;
   padding: 1.5rem;
   position: relative;
-  cursor:pointer;
+  cursor: pointer;
   box-shadow: var(--box-shadow);
   &:hover {
     box-shadow: var(--box-shadow-hover);
@@ -22,6 +22,7 @@ export const CardWrapper = styled.div`
 
   @media ${size.medium} {
     margin-bottom: 2rem;
+    width: 85vw;
   }
 `
 

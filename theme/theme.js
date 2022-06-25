@@ -38,6 +38,12 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 html {
     width:100%;
     overflow-x: hidden;
