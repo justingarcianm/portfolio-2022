@@ -6,7 +6,7 @@ export const CardWrapper = styled.div`
   background-position: center;
   background-size: cover;
   height: 200px;
-  width: auto;
+  width: 100%;
   border-radius: 7px;
   padding: 1.5rem;
   position: relative;
@@ -22,7 +22,6 @@ export const CardWrapper = styled.div`
 
   @media ${size.medium} {
     margin-bottom: 2rem;
-    width: 85vw;
   }
 `
 

@@ -18,6 +18,8 @@ export const PostHeading = styled.div`
 
   & h1 {
     margin: 1rem 0;
+    font-size: clamp(3rem, 10vw, 4rem);
+    line-height: clamp(3rem, 10vw, 4rem);
   }
 
   & > div {
