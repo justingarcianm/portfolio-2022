@@ -8,6 +8,7 @@ export const ListingDiv = styled(SectionDiv)`
   & img {
     border-radius: 7px;
     box-shadow: var(--box-shadow);
+    cursor: pointer;
   }
 
   @media ${size.medium} {

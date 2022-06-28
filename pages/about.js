@@ -3,21 +3,14 @@ import Contact from '../components/Contact/index'
 import me from '../public/images/me.jpg'
 import Section from '../components/section'
 import { UnderLine } from '../styles/Index.css'
-import { AboutSection } from '../styles/Index.css'
-
-import { pageVariant } from '../utils/motionVars'
+import TwoThirdsSection from '../components/twoThirdsSection'
 
 const About = () => {
   return (
     <>
-      <AboutSection
-      initial="out"
-      animate="in"
-      variants={pageVariant}
-      transition={{ delay: 0.2, duration: 1 }}
-      >
+      <TwoThirdsSection delay={0.2} direction={'left'}>
         <div className="about-header">
-          <div>
+          <div style={{ position: 'relative' }}>
             <h1>About Justin</h1>
             <UnderLine
               initial={{ width: 0 }}
@@ -25,7 +18,7 @@ const About = () => {
               transition={{ duration: 1, delay: 0.5 }}
             />
           </div>
-          <div className="about-content">
+          <div style={{ paddingTop: '1rem' }}>
             <p>
               I started practicing Web Development in 2018 and I haven&apos;t
               stopped since. I appreciate how much I&apos;ve been rewarded for
@@ -60,7 +53,7 @@ const About = () => {
           layout="intrinsic"
           priority
         />
-      </AboutSection>
+      </TwoThirdsSection>
       {/* <section className="skills">
         <h2>Skills</h2>
         <div className="skills-container">

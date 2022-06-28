@@ -34,7 +34,7 @@ export const Fixed = styled.div`
   max-width: 1280px;
   z-index: 1;
   backdrop-filter: blur(5px);
-  box-shadow: 0 1px 5px rgba(0,0,0, .3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   border-radius: 7px;
   left: 50%;
   transform: translateX(-50%);
@@ -96,7 +96,7 @@ export const StackedBtn = styled.div`
 `
 
 export const MenuLinks = styled.div`
-  margin-top:1rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   background-color: var(--nav-bg);
@@ -106,15 +106,15 @@ export const MenuLinks = styled.div`
   background-color: ${props => props.theme.body};
   width: 100%;
   height: fit-content;
-  overflow:hidden;
-  box-shadow: 0 10px 10px rgba(0,0,0, 0.3);
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   transition: 500ms ease all;
   backdrop-filter: blur(5px);
 
   & a {
     font-weight: 600;
     font-size: 2rem;
-    margin:2rem;
+    margin: 2rem;
   }
 `
 

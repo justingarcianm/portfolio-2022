@@ -20,7 +20,7 @@ export const CopyLink = styled.a`
 export const Container = styled.div`
   width: -webkit-fill-available;
   max-width: 1280px;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0 auto;
   position: relative;
   transition: all 200ms;
@@ -34,7 +34,7 @@ export const Container = styled.div`
 export const SectionDiv = styled(motion.section)`
   display: grid;
   grid-template-columns: repeat(${props => props.cols || 1}, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
   padding: 2rem 0;
   width: inherit;
@@ -42,15 +42,21 @@ export const SectionDiv = styled(motion.section)`
   position: relative;
 
   @media ${size.medium} {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
+export const TwoThirdsDiv = styled(SectionDiv)`
+  grid-template-columns: ${props =>
+    props.direction === 'right' ? '2fr 3fr' : '3fr 2fr'};
+  padding: 4rem 0;
+`
+
 export const LinkButton = styled(motion.a)`
   all: unset;
   background-color: ${props => props.theme.accent};
-  padding: .65rem 3rem;
+  padding: 0.65rem 3rem;
   border-radius: 8px;
   text-align: center;
   color: var(--light);

@@ -2,6 +2,7 @@ import Section from '../components/section'
 import PageLink from '../components/pageLink'
 import Card from '../components/Card/index'
 import Contact from '../components/Contact/index'
+import TwoThirdsSection from '../components/twoThirdsSection'
 
 import { fetchData } from '../utils/frontFetch'
 import { HomeTitle } from '../styles/Index.css'
@@ -10,12 +11,12 @@ import { CopyLink } from '../theme/global.css'
 const Home = ({ worksData, postsData }) => {
   return (
     <>
-      <Section delay={0.2} cols={2}>
+      <TwoThirdsSection delay={0.2}>
         <HomeTitle>
           Hi, my name is Justin
           <span>Web Developer</span>
         </HomeTitle>
-        <p style={{ padding: '0 1rem' }}>
+        <p>
           Need a problem solver? I am passionate coder and I have the talent to
           back it up with experience in headless CMS, front-end technologies,
           and design. I am a natural one man team but I also thrive in
@@ -23,7 +24,7 @@ const Home = ({ worksData, postsData }) => {
           <CopyLink href="/about">about me</CopyLink> or just get to the{' '}
           <CopyLink href="#projects">projects</CopyLink>.
         </p>
-      </Section>
+      </TwoThirdsSection>
 
       <Section delay={0.4}>
         <h2 id="projects">My Work</h2>

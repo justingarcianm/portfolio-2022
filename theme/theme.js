@@ -68,23 +68,24 @@ h5 {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: clamp(3rem, 12vw, 6rem);
+    line-height: clamp(3rem, 12vw, 6rem);
     font-weight:600;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 10vw, 3rem);
     font-weight:400;
     text-align:center;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 8vw, 2rem);
     font-weight:300;
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 6vw, 1.5rem);
     font-weight:400;
 }
 
