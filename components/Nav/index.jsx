@@ -17,23 +17,32 @@ import {
 } from './Nav.css'
 
 const Nav = props => {
-  const [open,setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const { path } = props
-
 
   const toggleMenu = () => {
     let menuLinks = document.querySelector('.toggle-btn')
     setOpen(!open)
-    menuLinks.style.maxHeight === '0px' ? 
-    menuLinks.style.maxHeight = `${menuLinks.scrollHeight}px` : 
-    menuLinks.style.maxHeight = '0px'
+    menuLinks.style.maxHeight === '0px'
+      ? (menuLinks.style.maxHeight = `${menuLinks.scrollHeight}px`)
+      : (menuLinks.style.maxHeight = '0px')
+  }
+
+  const logoClick = () => {
+    setOpen(false)
+    let menuLinks = document.querySelector('.toggle-btn')
+    if (menuLinks.style.maxHeight !== '0px') {
+      return (menuLinks.style.maxHeight = '0px')
+    }
   }
 
   return (
     <NavBar>
       <Fixed>
         <NavWrapper>
-          <Logo href="/">Justin Garcia</Logo>
+          <Link href="/" passHref>
+            <Logo onClick={() => logoClick()}>Justin Garcia</Logo>
+          </Link>
           <NavLinksWrapper>
             <div className="site-links">
               <NavLink path={path} href="/about">
@@ -60,26 +69,26 @@ const Nav = props => {
               />
               <div className="stacked-menu">
                 <StackedBtn onClick={toggleMenu}>
-                  {open ? <CgClose/> : <CgMenu /> }
+                  {open ? <CgClose /> : <CgMenu />}
                 </StackedBtn>
-                <MenuLinks className="toggle-btn" style={{maxHeight:'0px'}}>
-                    <Link path={path} href="/about">
-                      About
-                    </Link>
-                    <Link path={path} href="/works">
-                      Work
-                    </Link>
-                    <Link path={path} href="/posts">
-                      Posts
-                    </Link>
-                    <HeaderLink
-                      href="https://github.com/justingarcianm/Portfolio-2022"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGithub /> Source
-                    </HeaderLink>
-                  </MenuLinks>
+                <MenuLinks className="toggle-btn" style={{ maxHeight: '0px' }}>
+                  <Link path={path} href="/about" passHref>
+                    <a onClick={() => toggleMenu()}>About</a>
+                  </Link>
+                  <Link path={path} href="/works" passHref>
+                    <a onClick={() => toggleMenu()}>Work</a>
+                  </Link>
+                  <Link path={path} href="/posts" passHref>
+                    <a onClick={() => toggleMenu()}>Posts</a>
+                  </Link>
+                  <HeaderLink
+                    href="https://github.com/justingarcianm/Portfolio-2022"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub /> Source
+                  </HeaderLink>
+                </MenuLinks>
               </div>
             </Stacked>
           </NavLinksWrapper>

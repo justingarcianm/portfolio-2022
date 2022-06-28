@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLink } from 'react-icons/fa'
@@ -22,7 +23,14 @@ const Listing = ({
       transition={{ delay: delay || 0, duration: 1.2, type: 'spring' }}
       variants={listingVariant}
     >
-      <Image src={listingImg} alt={listingTitle} width={400} height={200} />
+      <Link
+        href={work ? `/work/${listingSlug}` : `/posts/${listingSlug}`}
+        passHref
+      >
+        <a>
+          <Image src={listingImg} alt={listingTitle} width={400} height={200} />
+        </a>
+      </Link>
       <div className="listing-content">
         <h3>{listingTitle}</h3>
         <div>

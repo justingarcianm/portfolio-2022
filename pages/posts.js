@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { CopyLink } from '../theme/global.css'
 import { motion } from 'framer-motion'
 import { fetchData } from '../utils/frontFetch'
 import { delayAmt } from '../utils/motionVars'
 import Section from '../components/section'
 import Listing from '../components/Listing/index'
+import TwoThirdsSection from '../components/twoThirdsSection'
 import { CategoryContainer, UnderLine } from '../styles/Index.css'
 
 const Posts = ({ postsData }) => {
@@ -61,9 +63,20 @@ const Posts = ({ postsData }) => {
 
   return (
     <>
-      <Section delay={0.2}>
+      <TwoThirdsSection delay={0.2} direction={'right'}>
         <h1 style={{ textAlign: 'center' }}>Posts</h1>
-      </Section>
+        <div>
+          <p>
+            Here are a collection of posts where I mostly focus on front end
+            technologies like HTML, CSS, Javascript, with various frameworks and
+            libraries that make being a web developer hopefully a little easier.
+          </p>
+          <p>
+            Have any thoughts? Or maybe some tips or tricks to share? Feel free
+            to reach out <CopyLink href="/#contact">here.</CopyLink>{' '}
+          </p>
+        </div>
+      </TwoThirdsSection>
 
       <Section delay={0.4}>
         <h2>Categories</h2>

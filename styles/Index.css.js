@@ -5,20 +5,12 @@ import { SectionDiv } from '../theme/global.css'
 import { PostHeading } from '../components/Post/Post.css'
 
 export const HomeTitle = styled.h1`
-  line-height: 6rem;
-  font-weight: 600;
-
   & span {
     color: ${props => props.theme.accent};
+    font-size: 75%;
+    line-height: initial;
     display: block;
-    width: max-content;
-    font-size: 4rem;
-    line-height: 5rem;
     text-transform: uppercase;
-
-    @media ${size.medium} {
-      display: table-cell;
-    }
   }
 `
 
@@ -38,15 +30,15 @@ export const AboutSection = styled(SectionDiv)`
   }
   & img {
     @media${size.medium} {
-      max-width:300px!important;
-      max-height:300px!important;
+      max-width: 300px !important;
+      max-height: 300px !important;
     }
   }
 `
 
 export const UnderLine = styled(motion.div)`
 position: absolute;
-bottom: -1px;
+bottom: -10px;
 left: 0;
 right: 0;
 height: 3px;

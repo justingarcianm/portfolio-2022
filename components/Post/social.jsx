@@ -5,8 +5,7 @@ import { SocialWrapper, SocialLink } from './Post.css'
 const Social = ({ link }) => {
   const copyLink = e => {
     e.preventDefault()
-    navigator.clipboard.writeText(`${link}`)
-    alert('link copied!')
+    return navigator.clipboard.writeText(`${link}`)
   }
 
   return (

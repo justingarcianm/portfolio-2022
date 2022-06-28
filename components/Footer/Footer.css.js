@@ -22,7 +22,7 @@ export const FooterContainer = styled(Container)`
   align-items: center;
 
   & .copyright span {
-    color:${props => props.theme.accent}
+    color: ${props => props.theme.accent};
   }
 
   @media ${size.small} {
